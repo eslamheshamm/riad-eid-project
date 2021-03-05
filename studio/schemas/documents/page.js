@@ -22,9 +22,8 @@ export default {
       title: 'Page sections',
       description: 'Add, edit, and reorder sections',
       of: [
-        { type: 'pricing' },
-        { type: 'uiComponentRef' },
         { type: 'hero' },
+        { type: 'uiComponentRef' },
         { type: 'infoRows' },
         { type: 'ctaColumns' },
         { type: 'ctaPlug' },
