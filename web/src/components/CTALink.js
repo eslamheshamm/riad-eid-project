@@ -22,13 +22,19 @@ const CTALink = props => {
   ) {
     link = props.landingPageRoute.slug.current;
   }
-
+  const color = {
+    background: `${props.colors}`
+  };
+  console.log(props.title);
+  console.log(props.colorlist);
+  console.log(color);
   if (props.kind === "button") {
     return (
       <button
         id="navAction"
         onClick={() => doNavigate(link)}
-        className={props.buttonActionClass || ""}
+        className={`${props.buttonActionClass}` || ""}
+        style={color}
       >
         {props.title}
       </button>
