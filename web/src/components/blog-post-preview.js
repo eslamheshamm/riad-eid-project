@@ -9,11 +9,18 @@ import styles from "./blog-post-preview.module.css";
 import { responsiveTitle3 } from "./typography.module.css";
 
 function BlogPostPreview(props) {
+  const style = props.mainImage
+    ? {
+        backgroundImage: `url("${imageUrlFor(buildImageObj(props.mainImage))
+          .width(600)
+          .height(Math.floor((9 / 16) * 600))
+          .auto("format")
+          .url()}}")`
+      }
+    : {};
+
   return (
-    <Link
-      className={props.isInList ? styles.inList : styles.inGrid}
-      to={getBlogUrl(props.slug.current)}
-    >
+    <div className={props.isInList ? styles.inList : styles.inGrid}>
       <div className={styles.leadMediaThumb}>
         {props.mainImage && props.mainImage.asset && (
           <img
@@ -33,9 +40,15 @@ function BlogPostPreview(props) {
             <PortableText blocks={props._rawExcerpt} />
           </div>
         )}
-        <div className={styles.date}>{format(props.publishedAt, "MMMM Do, YYYY")}</div>
+
+        <button className={styles.button}>
+          <Link to={getBlogUrl(props.slug.current)} className="focus:outline-none">
+            قراءة المزيد{" "}
+          </Link>
+        </button>
+        {/* <div className={styles.date}>{format(props.publishedAt, "MMMM Do, YYYY")}</div> */}
       </div>
-    </Link>
+    </div>
   );
 }
 
