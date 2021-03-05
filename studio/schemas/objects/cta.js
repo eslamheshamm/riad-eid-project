@@ -6,35 +6,41 @@ export default {
     {
       title: 'Link',
       name: 'link',
-      description: 'Only the first value of these will be used'
-    }
+      description: 'Only the first value of these will be used',
+    },
   ],
   fields: [
     {
       title: 'Title',
       name: 'title',
-      type: 'string'
+      type: 'string',
+    },
+    {
+      type: 'color',
+      name: 'colors',
+      title: 'Button color',
+      description: 'choose your button color',
     },
     {
       title: 'Landing page',
       name: 'landingPageRoute',
       type: 'reference',
       fieldset: 'link',
-      to: [{type: 'route'}]
+      to: [{ type: 'route' }],
     },
     {
       title: 'Path',
       name: 'route',
       fieldset: 'link',
       description: 'Example: /blog',
-      type: 'string'
+      type: 'string',
     },
     {
       title: 'External link',
       name: 'link',
       type: 'string',
       description: 'Example: https://www.sanity.io',
-      fieldset: 'link'
+      fieldset: 'link',
     },
     {
       title: 'Kind',
@@ -42,18 +48,18 @@ export default {
       type: 'string',
       options: {
         layout: 'radio',
-        list: ['button', 'link']
-      }
-    }
+        list: ['button', 'link'],
+      },
+    },
   ],
   preview: {
     select: {
       title: 'title',
       landingPage: 'landingPageRoute.slug.current',
       route: 'route',
-      link: 'link'
+      link: 'link',
     },
-    prepare ({title, landingPage, route, link}) {
+    prepare({ title, landingPage, route, link }) {
       let subtitle = 'Not set'
       if (landingPage) {
         subtitle = `Route: /${landingPage}`
@@ -66,8 +72,8 @@ export default {
       }
       return {
         title,
-        subtitle
+        subtitle,
       }
-    }
-  }
+    },
+  },
 }
