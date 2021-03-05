@@ -6,53 +6,23 @@ import "../styles/layout.css";
 class Layout extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      scrolled: false,
-    };
   }
-
-  componentDidMount() {
-    window.addEventListener("scroll", this.toggleBodyClass);
-    this.toggleBodyClass();
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.toggleBodyClass);
-  }
-
-  toggleBodyClass = () => {
-    if (this.state.scrolled && window.scrollY <= 10) {
-      this.setState({ scrolled: false });
-    } else if (!this.state.scrolled && window.scrollY > 10) {
-      this.setState({ scrolled: true });
-    }
-  };
 
   render() {
-    const {
-      children,
-      onHideNav,
-      onShowNav,
-      showNav,
-      siteTitle,
-      navMenuItems,
-      textWhite = true,
-    } = this.props;
-    const { scrolled } = this.state;
+    const { children, onHideNav, onShowNav, showNav, siteTitle, navMenuItems } = this.props;
+
     return (
-      <>
+      <html lang="ar" dir="rtl" className="w-11/12 mx-auto font-cairo">
         <Header
           navMenuItems={navMenuItems}
           siteTitle={siteTitle}
           onHideNav={onHideNav}
           onShowNav={onShowNav}
           showNav={showNav}
-          scrolled={scrolled}
-          textWhite={textWhite}
         />
         <>{children}</>
         <Footer siteTitle={siteTitle} />
-      </>
+      </html>
     );
   }
 }
