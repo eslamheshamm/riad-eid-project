@@ -7,7 +7,6 @@ import CTAColumns from "../components/cta-columns";
 import CTA from "../components/cta";
 import Pricing from "../components/pricing";
 import { TopWave, BottomWave } from "../components/wave";
-
 import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
@@ -42,9 +41,7 @@ export const query = graphql`
   }
 `;
 
-const Page = (props) => {
-  const { data, errors } = props;
-
+const Page = ({ data, errors }) => {
   if (errors) {
     return (
       <Layout>
@@ -64,13 +61,15 @@ const Page = (props) => {
   const page = data.page || data.route.page;
 
   const content = (page._rawContent || [])
-    .filter((c) => !c.disabled)
+    .filter(c => !c.disabled)
     .map((c, i) => {
       let el = null;
       switch (c._type) {
         case "pricing":
           el = <Pricing key={c._key} {...c} />;
           break;
+        // case "heroSmall":
+        //   el = <MainSection key={c._key} {...c} />;
         case "infoRows":
           el = <InfoRows key={c._key} {...c} />;
           break;
@@ -101,10 +100,10 @@ const Page = (props) => {
       return el;
     });
 
-  const gradient = {
-    from: (site.primaryColor && site.primaryColor.hex) || "#d53369",
-    to: (site.secondaryColor && site.secondaryColor.hex) || "#daae51",
-  };
+  // const gradient = {
+  //   from: (site.primaryColor && site.primaryColor.hex) || "#d53369",
+  //   to: (site.secondaryColor && site.secondaryColor.hex) || "#daae51",
+  // };
 
   const menuItems = page.navMenu && (page.navMenu.items || []);
   const pageTitle = data.route && !data.route.useSiteTitle && page.title;
@@ -116,9 +115,9 @@ const Page = (props) => {
         description={site.description}
         keywords={site.keywords}
         bodyAttr={{
-          class: "leading-normal tracking-normal text-white gradient",
+          class: "leading-normal tracking-normal text-white gradient"
         }}
-        gradient={gradient}
+        // gradient={gradient}
       />
       <div className="pt-24">{content}</div>
     </Layout>
