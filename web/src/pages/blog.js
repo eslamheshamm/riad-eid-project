@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import {
   mapEdgesToNodes,
   filterOutDocsWithoutSlugs,
-  filterOutDocsPublishedInTheFuture,
+  filterOutDocsPublishedInTheFuture
 } from "../lib/helpers";
 import BlogPostPreviewList from "../components/blog-post-preview-list";
 import Container from "../components/container";
@@ -40,7 +40,7 @@ export const query = graphql`
   }
 `;
 
-const IndexPage = (props) => {
+const IndexPage = props => {
   const { data, errors } = props;
 
   if (errors) {
@@ -65,11 +65,21 @@ const IndexPage = (props) => {
   }
 
   return (
-    <Layout textWhite={false}>
-      <SEO title={site.title || 'Missing title'} description={site.description || 'Missing description'} keywords={site.keywords || []} />
+    <Layout>
+      <SEO
+        title={site.title || "Missing title"}
+        description={site.description || "Missing description"}
+        keywords={site.keywords || []}
+      />
       <Container>
-        <h1 hidden>Welcome to {site.title}</h1>
-        <div className="py-6">{postNodes && <BlogPostPreviewList nodes={postNodes} />}</div>
+        <div className="flex flex-col mb-12 ">
+          <h1 className="mb-4 text-4xl font-yasser">مقالات عن صحة الأطفال</h1>
+          <p>
+            نسبة النجاح في هذا الامر تصل إلي 95% في حال التزام الزوجين بجميع التوصيات المذكورة في
+            البرنامج.
+          </p>
+        </div>
+        <div className="py-6 mb-56">{postNodes && <BlogPostPreviewList nodes={postNodes} />}</div>
       </Container>
     </Layout>
   );
