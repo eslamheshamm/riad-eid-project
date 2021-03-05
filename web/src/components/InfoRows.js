@@ -18,38 +18,20 @@ const maybeImage = illustration => {
       clientConfig.sanity
     );
 
-    img = (
-      <img className="w-full sm:h-64 mx-auto" src={fluidProps.src} alt={illustration.image.alt} />
-    );
+    img = <img className="w-full sm:h-20" src={fluidProps.src} alt={illustration.image.alt} />;
   }
   return img;
 };
 
 const InfoRow = props => {
   const img = maybeImage(props.illustration);
-  const sizeClass = img ? "sm:w-1/2" : "sm:w-1/1";
   return (
-    <div className={"flex flex-wrap pb-6"}>
-      <div className={"w-5/6 p-6 " + sizeClass}>
-        <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">{props.title}</h3>
-        <p className="text-gray-600 mb-8">
-          <PortableText blocks={props.text} />
-        </p>
-      </div>
-      {img && <div className={"w-full " + sizeClass}>{img}</div>}
-    </div>
-  );
-};
+    <div className={"flex p-4 pb-8 shadow-lg flex-col rounded-3xl"}>
+      <div>
+        {img && <div className="w-16 ">{img}</div>}
 
-const InfoRowFlipped = props => {
-  const img = maybeImage(props.illustration);
-  const sizeClass = img ? "sm:w-1/2" : "sm:w-1/1";
-  return (
-    <div className={"flex flex-wrap pb-6 flex-col-reverse sm:flex-row"}>
-      {img && <div className={"w-full " + sizeClass}>{img}</div>}
-      <div className={"w-5/6 p-6 " + sizeClass}>
-        <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">{props.title}</h3>
-        <p className="text-gray-600 mb-8">
+        <h3 className="text-2xl text-black leading-snug my-4 font-yasser">{props.title}</h3>
+        <p className="text-black">
           <PortableText blocks={props.text} />
         </p>
       </div>
@@ -61,20 +43,16 @@ const InfoRows = props => {
   const contentRows = (props.rows || [])
     .filter(r => !r.disabled)
     .map((r, i) => {
-      return i % 2 === 0 ? <InfoRow key={r._key} {...r} /> : <InfoRowFlipped key={r._key} {...r} />;
+      return <InfoRow key={r._key} {...r} />;
     });
 
   return (
-    <section className="bg-white border-b py-8">
-      <div className="container max-w-5xl mx-auto m-8">
-        <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
-          {props.title}
-        </h1>
-        <div className="w-full mb-4">
-          <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
-        </div>
-        {contentRows}
-      </div>
+    <section className="bg-white py-8 ">
+      <h1 className="w-full my-6 text-3xl  leading-snug text-center text-black font-yasser">
+        {props.title}
+      </h1>
+      <p className="w-full text-center text-black leading-snug mb-16">{props.description}</p>
+      <div className="  mx-auto m-8 grid grid-cols-3 gap-4">{contentRows}</div>
     </section>
   );
 };
