@@ -8,6 +8,10 @@ export default {
       name: 'title'
     },
     {
+      type: 'string',
+      name: 'description'
+    },
+    {
       type: 'array',
       name: 'rows',
       of: [{ type: 'textWithIllustration' }]
