@@ -2,6 +2,7 @@ import React from "react";
 import PortableText from "./portableText";
 import clientConfig from "../../client-config";
 import CTALink from "./CTALink";
+import styles from "./hero.module.css";
 
 import { getFluidGatsbyImage } from "gatsby-source-sanity";
 const maybeImage = illustration => {
@@ -13,9 +14,7 @@ const maybeImage = illustration => {
       clientConfig.sanity
     );
 
-    img = (
-      <img className="w-full md:w-4/5 z-50" src={fluidProps.src} alt={illustration.image.alt} />
-    );
+    img = <img className="w-full z-50" src={fluidProps.src} alt={illustration.image.alt} />;
   }
   return img;
 };
@@ -23,23 +22,31 @@ const maybeImage = illustration => {
 function Hero(props) {
   const img = maybeImage(props.illustration);
   return (
-    <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+    <div className=" px-3 grid grid-cols-2 gap-6 text-black my-40">
       {/* Left col */}
-      <div className="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
-        <p className="uppercase tracking-loose w-full">{props.label}</p>
-        <h1 className="my-4 text-5xl font-bold leading-tight">{props.heading}</h1>
-        <div className="leading-normal text-2xl mb-8">
+      <div className="flex flex-col  justify-center items-start">
+        <h1
+          className={
+            props.size === "small"
+              ? " text-3xl leading-snug font-yasser"
+              : props.size === "big"
+              ? " text-6xl leading-snug font-yasser"
+              : ""
+          }
+        >
+          {props.heading}
+        </h1>
+        <div className="leading-normal  my-8">
           <PortableText blocks={props.tagline} />
         </div>
         {props.cta && props.cta.title && (
-          <CTALink
-            {...props.cta}
-            buttonActionClass="mx-auto ml-4 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg"
-          />
+          <CTALink {...props.cta} buttonActionClass={styles.button} />
         )}
       </div>
       {/* Right col */}
-      <div className="w-full md:w-3/5 py-6 text-center">{img}</div>
+      <div className="flex items-center justify-center">
+        <div className="w-8/12">{img}</div>
+      </div>
     </div>
   );
 }
