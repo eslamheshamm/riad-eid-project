@@ -8,6 +8,7 @@
 .mainImage {
   display: block;
   position: relative;
+  border-radius: 1.5rem;
   background: var(--color-very-light-gray);
   padding-bottom: calc(9 / 16 * 100%);
 
@@ -20,6 +21,7 @@
     height: 100%;
     vertical-align: top;
     object-fit: cover;
+    border-radius: 1.5rem;
   }
 }
 
@@ -28,7 +30,7 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-column-gap: 2em;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 4fr 1fr;
   }
 }
 
