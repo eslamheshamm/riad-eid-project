@@ -9,7 +9,12 @@ import localeString from './objects/localeString'
 import navMenu from './documents/navMenu'
 import author from './documents/author'
 import category from './documents/category'
+
+// posts
 import post from './documents/post'
+import pressPost from './documents/pressPost'
+import interviews from './documents/interviews'
+
 import page from './documents/page'
 import siteSettings from './documents/siteSettings'
 import route from './documents/route'
@@ -41,6 +46,8 @@ export default createSchema({
   types: schemaTypes // Built-in types
     // Our custom types
     .concat([
+      interviews,
+      pressPost,
       latex,
       localeString,
       variation,

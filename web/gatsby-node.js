@@ -13,10 +13,10 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
       fields: {
         isPublished: {
           type: "Boolean!",
-          resolve: (source) => new Date(source.publishedAt) <= new Date(),
-        },
-      },
-    }),
+          resolve: source => new Date(source.publishedAt) <= new Date()
+        }
+      }
+    })
   ]);
 };
 
@@ -40,14 +40,14 @@ async function createLandingPages(pathPrefix = "/", graphql, actions, reporter) 
   if (result.errors) throw result.errors;
 
   const routeEdges = (result.data.allSanityRoute || {}).edges || [];
-  routeEdges.forEach((edge) => {
+  routeEdges.forEach(edge => {
     const { id, slug = {} } = edge.node;
     const path = [pathPrefix, slug.current, "/"].join("");
     reporter.info(`Creating landing page: ${path}`);
     createPage({
       path,
       component: require.resolve("./src/templates/page.js"),
-      context: { id },
+      context: { id }
     });
   });
 }
@@ -74,15 +74,85 @@ async function createBlogPostPages(pathPrefix = "/blog", graphql, actions, repor
 
   const postEdges = (result.data.allSanityPost || {}).edges || [];
   postEdges
-    .filter((edge) => !isFuture(edge.node.publishedAt))
-    .forEach((edge) => {
+    .filter(edge => !isFuture(edge.node.publishedAt))
+    .forEach(edge => {
       const { id, slug = {} } = edge.node;
       const path = `${pathPrefix}/${slug.current}/`;
       reporter.info(`Creating blog post page: ${path}`);
       createPage({
         path,
         component: require.resolve("./src/templates/blog-post.js"),
-        context: { id },
+        context: { id }
+      });
+    });
+}
+
+async function createPressPostPages(pathPrefix = "/press", graphql, actions, reporter) {
+  const { createPage } = actions;
+  const result = await graphql(`
+    {
+      allSanityPress(filter: { slug: { current: { ne: null } } }) {
+        edges {
+          node {
+            id
+            publishedAt
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  if (result.errors) throw result.errors;
+
+  const postEdges = (result.data.allSanityPress || {}).edges || [];
+  postEdges
+    .filter(edge => !isFuture(edge.node.publishedAt))
+    .forEach(edge => {
+      const { id, slug = {} } = edge.node;
+      const path = `${pathPrefix}/${slug.current}/`;
+      reporter.info(`Creating Press post page: ${path}`);
+      createPage({
+        path,
+        component: require.resolve("./src/templates/press-post.js"),
+        context: { id }
+      });
+    });
+}
+
+async function createInterviewsPostPages(pathPrefix = "/interviews", graphql, actions, reporter) {
+  const { createPage } = actions;
+  const result = await graphql(`
+    {
+      allSanityInterviews(filter: { slug: { current: { ne: null } } }) {
+        edges {
+          node {
+            id
+            publishedAt
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  if (result.errors) throw result.errors;
+
+  const postEdges = (result.data.allSanityInterviews || {}).edges || [];
+  postEdges
+    .filter(edge => !isFuture(edge.node.publishedAt))
+    .forEach(edge => {
+      const { id, slug = {} } = edge.node;
+      const path = `${pathPrefix}/${slug.current}/`;
+      reporter.info(`Creating Interviews post page: ${path}`);
+      createPage({
+        path,
+        component: require.resolve("./src/templates/interviews-post.js"),
+        context: { id }
       });
     });
 }
@@ -90,4 +160,6 @@ async function createBlogPostPages(pathPrefix = "/blog", graphql, actions, repor
 exports.createPages = async ({ graphql, actions, reporter }) => {
   await createLandingPages("/", graphql, actions, reporter);
   await createBlogPostPages("/blog", graphql, actions, reporter);
+  await createPressPostPages("/press", graphql, actions, reporter);
+  await createInterviewsPostPages("/interviews", graphql, actions, reporter);
 };
