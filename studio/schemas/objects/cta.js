@@ -15,12 +15,7 @@ export default {
       name: 'title',
       type: 'string',
     },
-    {
-      type: 'color',
-      name: 'colors',
-      title: 'Button color',
-      description: 'choose your button color',
-    },
+
     {
       title: 'Landing page',
       name: 'landingPageRoute',
@@ -48,7 +43,7 @@ export default {
       type: 'string',
       options: {
         layout: 'radio',
-        list: ['button', 'link'],
+        list: ['button', 'link', 'whatsapp'],
       },
     },
   ],

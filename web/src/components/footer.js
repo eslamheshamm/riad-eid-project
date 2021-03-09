@@ -49,7 +49,7 @@ const Footer = () => (
         <div className="flex-1 mb-6  ml-16">
           <a
             className="text-orange-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
-            href="#"
+            href="/"
           >
             <img src={Logo} alt="logo" />
           </a>
@@ -57,10 +57,10 @@ const Footer = () => (
             لجميع التوصيات المذكورة في البرنامج التزام الزوجين
           </p>
           <div className="flex">
-            <a href="#" className="ml-6">
+            <a href="/" className="ml-6">
               <Instagram />
             </a>
-            <a href="#">
+            <a href="/">
               <Youtube />
             </a>
           </div>
@@ -121,7 +121,7 @@ const Footer = () => (
               </p>
             </li>
             <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-              <a href="#">
+              <a href="/">
                 <GooglePlay />
               </a>
             </li>

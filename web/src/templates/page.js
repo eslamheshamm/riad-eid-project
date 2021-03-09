@@ -1,12 +1,12 @@
 import React from "react";
 import { graphql } from "gatsby";
 
+import AboutProgramSteps from "../components/about-program-steps";
 import Hero from "../components/hero";
 import InfoRows from "../components/InfoRows";
 import CTAColumns from "../components/cta-columns";
 import CTA from "../components/cta";
 // import Pricing from "../components/pricing";
-import { TopWave, BottomWave } from "../components/wave";
 import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
@@ -59,9 +59,6 @@ const Page = ({ data, errors }) => {
     .map((c, i) => {
       let el = null;
       switch (c._type) {
-        // case "pricing":
-        //   el = <Pricing key={c._key} {...c} />;
-        //   break;
         case "infoRows":
           el = <InfoRows key={c._key} {...c} />;
           break;
@@ -76,12 +73,12 @@ const Page = ({ data, errors }) => {
           break;
         case "uiComponentRef":
           switch (c.name) {
-            case "topWave":
-              el = <TopWave />;
+            case "programSteps":
+              el = <AboutProgramSteps />;
               break;
-            case "bottomWave":
-              el = <BottomWave />;
-              break;
+            // case "bottomWave":
+            //   el = <BottomWave />;
+            //   break;
             default:
               break;
           }

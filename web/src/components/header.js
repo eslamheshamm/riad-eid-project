@@ -6,20 +6,11 @@ const Header = () => {
   let buttonColor = {
     backgroundColor: "#25D366"
   };
-  let navActionClass =
-    "mx-auto lg:mx-0 hover:underline font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 text-black";
-  // navActionClass += !textWhite || !scrolled ? " bg-white text-gray-800" : "";
-  // navActionClass += textWhite || scrolled ? " gradient text-white" : "";
 
   let navContentClass =
     "w-full flex-grow lg:flex lg:items-center lg:w-auto lg:block mt-2 lg:mt-0 text-black text-black p-4 lg:p-0 z-20";
-  // navContentClass += !textWhite || !scrolled ? " lg:bg-transparent bg-gray-100" : "";
-  // navContentClass += textWhite || scrolled ? " bg-white" : "";
 
   let titleClass = "toggleColour no-underline hover:no-underline font-bold text-2xl lg:text-4xl";
-  // titleClass += !textWhite || scrolled ? " text-gray-800" : "";
-  // titleClass += textWhite || !scrolled ? " text-white" : "";
-  // const menuItems = page.navMenu && (page.navMenu.items || []);
 
   return (
     <nav className={headerClass}>
@@ -31,11 +22,6 @@ const Header = () => {
         </div>
         <div className={navContentClass}>
           <ul className="list-reset lg:flex justify-end flex-1 items-center">
-            {/* {navMenuItems.map(i => (
-                <li className="mr-3">
-                  <CTALink {...i} buttonActionClass={navActionClass} />
-                </li>
-              ))} */}
             <li>
               <Link to="/" className="mx-6 opacity-50" activeClassName="opacity-100">
                 الصفحة الرئيسية
@@ -68,7 +54,7 @@ const Header = () => {
             </li>
             <li>
               <a
-                href="#"
+                href="/"
                 target="_blank"
                 className=" text py-4 px-6 text-xl items-center rounded-3xl flex"
                 style={buttonColor}
