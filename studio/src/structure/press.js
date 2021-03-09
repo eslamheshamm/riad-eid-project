@@ -17,32 +17,32 @@ export const icons = {
   AllIcon,
 }
 
-const blog = S.listItem()
-  .title('Blog')
+const press = S.listItem()
+  .title('Press')
   .icon(BlogIcon)
   .child(
     S.list()
-      .title('/blog')
+      .title('/press')
       .items([
         S.listItem()
           .title('Published posts')
-          .schemaType('post')
+          .schemaType('press')
           .icon(BlogIcon)
           .child(
             S.documentList('post')
               .title('Published posts')
               .menuItems(S.documentTypeList('post').getMenuItems())
               // Only show posts with publish date earlier than now and that is not drafts
-              .filter('_type == "post" && publishedAt < now() && !(_id in path("drafts.**"))')
+              .filter('_type == "press" && publishedAt < now() && !(_id in path("drafts.**"))')
               .child((documentId) =>
                 S.document()
                   .documentId(documentId)
-                  .schemaType('post')
+                  .schemaType('press')
                   .views([S.view.form(), PreviewIFrame()])
               )
           ),
-        S.documentTypeListItem('post').title('All posts').icon(AllIcon),
+        S.documentTypeListItem('press').title('All posts').icon(AllIcon),
       ])
   )
 
-export default blog
+export default press
