@@ -1,0 +1,19 @@
+.aspectRatioBox {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.aspectRatioBoxInside {
+  width: 75%;
+  aspect-ratio: 16 / 9;
+}
+.playerWrapper {
+  position: relative;
+  padding-top: 56.25%; /* 720 / 1280 = 0.5625 */
+}
+
+.reactPlayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
