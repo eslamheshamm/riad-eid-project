@@ -22,7 +22,7 @@ const maybeImage = illustration => {
 function Hero(props) {
   const img = maybeImage(props.illustration);
   return (
-    <div className=" px-3 grid grid-cols-2 gap-6 text-black my-40">
+    <div className=" px-3 grid grid-cols-2 gap-6 text-black my-16">
       {/* Left col */}
       <div className="flex flex-col  justify-center items-start">
         <h1
