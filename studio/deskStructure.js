@@ -2,7 +2,7 @@ import S from '@sanity/desk-tool/structure-builder'
 import { MdMenu } from 'react-icons/md'
 import { GoBrowser as PageIcon, GoHome, GoSettings } from 'react-icons/go'
 import blog from './src/structure/blog'
-import interviews from './src/structure/Interviews'
+import interviews from './src/structure/interviews'
 import press from './src/structure/press'
 
 import landingPages from './src/structure/landingPages'
