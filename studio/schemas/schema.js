@@ -14,6 +14,8 @@ import category from './documents/category'
 import post from './documents/post'
 import pressPost from './documents/pressPost'
 import interviews from './documents/interviews'
+import questions from './documents/questions'
+import reviews from './documents/reviews'
 
 import page from './documents/page'
 import siteSettings from './documents/siteSettings'
@@ -46,6 +48,8 @@ export default createSchema({
   types: schemaTypes // Built-in types
     // Our custom types
     .concat([
+      reviews,
+      questions,
       interviews,
       pressPost,
       latex,
