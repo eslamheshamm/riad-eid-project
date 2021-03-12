@@ -66,7 +66,6 @@ export default {
     select: {
       title: 'title',
       publishedAt: 'publishedAt',
-      slug: 'slug',
       media: 'mainImage',
     },
     prepare({ title = 'No title', media }) {
