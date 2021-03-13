@@ -52,7 +52,9 @@ const InfoRows = props => {
         {props.title}
       </h1>
       <p className="w-full text-center text-black leading-snug mb-16">{props.description}</p>
-      <div className="  mx-auto m-8 grid grid-cols-3 gap-4">{contentRows}</div>
+      <div className="  mx-auto m-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {contentRows}
+      </div>
     </section>
   );
 };
