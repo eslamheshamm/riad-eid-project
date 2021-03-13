@@ -4,6 +4,8 @@ import { GoBrowser as PageIcon, GoHome, GoSettings } from 'react-icons/go'
 import blog from './src/structure/blog'
 import interviews from './src/structure/interviews'
 import press from './src/structure/press'
+import reviews from './src/structure/reviews'
+import questions from './src/structure/questions'
 
 import landingPages from './src/structure/landingPages'
 import PreviewIFrame from './src/components/previewIFrame'
@@ -11,14 +13,13 @@ import PreviewIFrame from './src/components/previewIFrame'
 const hiddenDocTypes = (listItem) =>
   ![
     'route',
-    'navigationMenu',
     'post',
     'page',
     'siteSettings',
-    'author',
-    'category',
     'interviews',
     'press',
+    'questions',
+    'reviews',
   ].includes(listItem.getId())
 
 export default () =>
@@ -48,6 +49,8 @@ export default () =>
       blog,
       interviews,
       press,
+      questions,
+      reviews,
       landingPages,
       // This returns an array of all the document types
       // defined in schema.js. We filter out those that we have
