@@ -23,6 +23,7 @@ export const query = graphql`
           id
           publishedAt
           title
+          qoustion
           _rawExcerpt
         }
       }

@@ -1,23 +1,22 @@
 // import { format } from "date-fns";
 import React from "react";
-import { cn } from "../../lib/helpers";
-import PortableText from "../portableText";
+import { cn } from "../../../lib/helpers";
+import PortableText from "../../portableText";
 
 import styles from "./qoustions-post-preview.module.css";
 
 function QoustionsPostPreview(props) {
-  console.log(props.quetsion);
   return (
     <div className={props.isInList ? styles.inList : styles.inGrid}>
       <div className="flex py-4 px-8">
         <div className="flex items-start justify-start ">
           <Bookmark />
           <div className="flex flex-col items-start mr-6">
-            <h3 className={cn(styles.title)}>{props.qoustion}</h3>
+            <h3 className={cn(styles.title)}>{props.title}</h3>
 
             {props._rawExcerpt && (
               <div className={styles.excerpt}>
-                <PortableText blocks={props._rawExcerpt} />
+                <PortableText blocks={props.text} />
               </div>
             )}
           </div>
