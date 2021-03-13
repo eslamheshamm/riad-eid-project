@@ -2,64 +2,67 @@ import { Link } from "gatsby";
 import React from "react";
 import Logo from "./images/logo-line.png";
 const Header = () => {
-  let headerClass = " w-full text-black font-yasser text-base";
   let buttonColor = {
     backgroundColor: "#25D366"
   };
 
-  let navContentClass =
-    "w-full flex-grow lg:flex lg:items-center lg:w-auto lg:block mt-2 lg:mt-0 text-black text-black p-4 lg:p-0 z-20";
-
-  let titleClass = "toggleColour no-underline hover:no-underline font-bold text-2xl lg:text-4xl";
-
   return (
-    <nav className={headerClass}>
-      <div className="w-full  mx-auto flex flex-wrap items-center justify-between mt-0 py-16 ">
-        <div className="pl-4 flex items-center">
-          <Link id="siteTitle" className={titleClass} to="/">
+    <nav className=" w-full text-black font-yasser text-base">
+      <div className="w-full  mx-auto flex flex-wrap items-center   justify-center lg:justify-between mt-0 py-16 ">
+        <div className=" flex items-center ">
+          <Link id="siteTitle" to="/">
             <img src={Logo} alt="logo" />
           </Link>
         </div>
-        <div className={navContentClass}>
-          <ul className="list-reset lg:flex justify-end flex-1 items-center">
-            <li>
-              <Link to="/" className="mx-6 opacity-50" activeClassName="opacity-100">
+        <div className="w-full flex-grow lg:flex lg:items-center justify-center lg:w-auto mt-2 text-black p-4">
+          <ul className="flex flex-col md:flex-row md:justify-center lg:justify-end flex-1 items-start md:items-center">
+            <li className="my-1">
+              <Link to="/" className="mx-2 lg:mx-6 opacity-50" activeClassName="opacity-100">
                 الصفحة الرئيسية
               </Link>
             </li>
-            <li>
-              <Link to="/about-program" className="mx-6 opacity-50" activeClassName="opacity-100">
+            <li className="my-1">
+              <Link
+                to="/about-program"
+                className="mx-2 lg:mx-6 opacity-50"
+                activeClassName="opacity-100"
+              >
                 عن البرنامج
               </Link>
             </li>
-            <li>
-              <Link to="/interviews" className="mx-6 opacity-50" activeClassName="opacity-100">
+            <li className="my-1">
+              <Link
+                to="/interviews"
+                className="mx-2 lg:mx-6 opacity-50"
+                activeClassName="opacity-100"
+              >
                 مقابلات
               </Link>
             </li>
-            <li>
-              <Link to="/press" className="mx-6 opacity-50" activeClassName="opacity-100">
+            <li className="my-1">
+              <Link to="/press" className="mx-2 lg:mx-6 opacity-50" activeClassName="opacity-100">
                 الصحافة
               </Link>
             </li>
-            <li>
-              <Link to="/reviews" className="mx-6 opacity-50" activeClassName="opacity-100">
+            <li className="my-1">
+              <Link to="/reviews" className="mx-2 lg:mx-6 opacity-50" activeClassName="opacity-100">
                 توصيات
               </Link>
             </li>
-            <li>
-              <Link to="/blog" className="mx-6 opacity-50" activeClassName="opacity-100">
+            <li className="my-1">
+              <Link to="/blog" className="mx-2 lg:mx-6 opacity-50" activeClassName="opacity-100">
                 المدونة
               </Link>
             </li>
-            <li>
+            <li className="my-1 hidden md:block">
               <a
                 href="/"
                 target="_blank"
-                className=" text py-4 px-6 text-xl items-center rounded-3xl flex"
+                className=" text py-4 px-6 text-xl rounded-3xl flex "
                 style={buttonColor}
               >
-                <Whatsapp />
+                <Whatsapp className="flex-grow-0" />
+
                 <span className="mr-3"> تواصل معنا</span>
               </a>
             </li>

@@ -14,7 +14,7 @@ const maybeImage = illustration => {
       clientConfig.sanity
     );
 
-    img = <img className="w-full z-50" src={fluidProps.src} alt={illustration.image.alt} />;
+    img = <img className="w-full " src={fluidProps.src} alt={illustration.image.alt} />;
   }
   return img;
 };
@@ -22,15 +22,15 @@ const maybeImage = illustration => {
 function Hero(props) {
   const img = maybeImage(props.illustration);
   return (
-    <div className=" px-3 grid grid-cols-2 gap-6 text-black my-16">
+    <div className=" px-3 grid grid-cols-1 lg:grid-cols-2 gap-6 text-black my-16">
       {/* Left col */}
       <div className="flex flex-col  justify-center items-start">
         <h1
           className={
             props.size === "small"
-              ? " text-3xl leading-snug font-yasser"
+              ? "text-xl  md:text-3xl leading-snug font-yasser"
               : props.size === "big"
-              ? " text-6xl leading-snug font-yasser"
+              ? "text-3xl  md:text-4xl  lg:text-6xl leading-snug font-yasser"
               : ""
           }
         >
@@ -44,8 +44,8 @@ function Hero(props) {
         )}
       </div>
       {/* Right col */}
-      <div className="flex items-center justify-center">
-        <div className="w-8/12">{img}</div>
+      <div className="flex items-center row-start-1 lg:row-start-auto justify-center">
+        <div className="sm:w-9/12 lg:w-8/12">{img}</div>
       </div>
     </div>
   );
