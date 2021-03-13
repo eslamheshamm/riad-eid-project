@@ -5,11 +5,6 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 import localeString from './objects/localeString'
 
-// document schemas
-import navMenu from './documents/navMenu'
-import author from './documents/author'
-import category from './documents/category'
-
 // posts
 import post from './documents/post'
 import pressPost from './documents/pressPost'
@@ -33,7 +28,6 @@ import cta from './objects/cta'
 import bodyPortableText from './objects/bodyPortableText'
 import excerptPortableText from './objects/excerptPortableText'
 import mainImage from './objects/mainImage'
-import authorReference from './objects/authorReference'
 import link from './objects/link'
 import variation from './objects/variation'
 import openGraph from './objects/openGraph'
@@ -63,12 +57,8 @@ export default createSchema({
       cta,
       siteSettings,
       post,
-      navMenu,
       page,
-      category,
-      author,
       mainImage,
-      authorReference,
       instagram,
       videoEmbed,
       bodyPortableText,
