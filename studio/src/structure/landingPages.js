@@ -1,7 +1,7 @@
 import S from '@sanity/desk-tool/structure-builder'
 import PreviewIFrame from '../../src/components/previewIFrame'
 
-import { MdMenu } from "react-icons/md"
+import { MdMenu } from 'react-icons/md'
 
 export default S.listItem()
   .title('Page Builder')
@@ -9,11 +9,6 @@ export default S.listItem()
     S.list()
       .title('Landing Pages')
       .items([
-        S.listItem()
-          .title('Navigation Menus')
-          .icon(MdMenu)
-          .schemaType('navigationMenu')
-          .child(S.documentTypeList('navigationMenu').title('Navigation Menus')),
         S.listItem()
           .title('Routes')
           .schemaType('route')
