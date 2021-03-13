@@ -41,11 +41,6 @@ export const query = graphql`
   }
 `;
 const Interviews = ({ data, errors }) => {
-  // return (
-  //   <Layout>
-  //     <h1>Pres Page</h1>
-  //   </Layout>
-  // );
   if (errors) {
     return (
       <Layout>

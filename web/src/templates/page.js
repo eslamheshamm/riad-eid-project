@@ -6,10 +6,11 @@ import Hero from "../components/hero";
 import InfoRows from "../components/InfoRows";
 import CTAColumns from "../components/cta-columns";
 import CTA from "../components/cta";
-// import Pricing from "../components/pricing";
 import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
+import ReviewsPostPreviewList from "../components/home/reviews/reviews-post-preview-list";
+import QoustionsPostPreviewGrid from "../components/home/qoustions/qoustions-post-preview-list";
 
 export const query = graphql`
   query PageTemplateQuery($id: String!) {
@@ -36,6 +37,7 @@ export const query = graphql`
 `;
 
 const Page = ({ data, errors }) => {
+  console.log(data);
   if (errors) {
     return (
       <Layout>
@@ -65,6 +67,12 @@ const Page = ({ data, errors }) => {
         case "hero":
           el = <Hero key={c._key} {...c} />;
           break;
+        case "reviewsHome":
+          el = <ReviewsPostPreviewList key={c._key} {...c} />;
+          break;
+        case "questionsHome":
+          el = <QoustionsPostPreviewGrid key={c._key} {...c} />;
+          break;
         case "ctaColumns":
           el = <CTAColumns key={c._key} {...c} />;
           break;
@@ -76,9 +84,6 @@ const Page = ({ data, errors }) => {
             case "programSteps":
               el = <AboutProgramSteps />;
               break;
-            // case "bottomWave":
-            //   el = <BottomWave />;
-            //   break;
             default:
               break;
           }
@@ -89,16 +94,10 @@ const Page = ({ data, errors }) => {
       return el;
     });
 
-  // const gradient = {
-  //   from: (site.primaryColor && site.primaryColor.hex) || "#d53369",
-  //   to: (site.secondaryColor && site.secondaryColor.hex) || "#daae51",
-  // };
-
-  const menuItems = page.navMenu && (page.navMenu.items || []);
   const pageTitle = data.route && !data.route.useSiteTitle && page.title;
 
   return (
-    <Layout navMenuItems={menuItems} textWhite={true}>
+    <Layout>
       <SEO
         title={pageTitle}
         description={site.description}
@@ -106,7 +105,6 @@ const Page = ({ data, errors }) => {
         bodyAttr={{
           class: "leading-normal tracking-normal text-white gradient"
         }}
-        // gradient={gradient}
       />
       <div className="pt-24">{content}</div>
     </Layout>

@@ -41,12 +41,6 @@ export const query = graphql`
     }
 
     site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
-      primaryColor {
-        hex
-      }
-      secondaryColor {
-        hex
-      }
       title
       openGraph {
         title
@@ -59,7 +53,7 @@ export const query = graphql`
   }
 `;
 
-const IndexPage = (props) => {
+const IndexPage = props => {
   const { data, errors } = props;
 
   if (errors) {
