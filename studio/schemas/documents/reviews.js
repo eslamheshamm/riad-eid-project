@@ -11,25 +11,24 @@ export default {
     {
       name: 'title',
       type: 'string',
-      title: 'Question',
-      description: 'Ask',
+      title: 'Title',
+    },
+    {
+      name: 'country',
+      type: 'string',
+      title: 'Country',
     },
     {
       name: 'excerpt',
       type: 'excerptPortableText',
-      title: 'Answers',
-      description: 'Your Ansower here.',
+      title: 'Review',
+      description: 'Your Review here.',
     },
     {
       name: 'publishedAt',
       type: 'datetime',
       title: 'Published at',
       description: 'This can be used to schedule post for publishing',
-    },
-    {
-      name: 'body',
-      type: 'bodyPortableText',
-      title: 'Body',
     },
   ],
   orderings: [

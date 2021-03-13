@@ -6,9 +6,14 @@ export default {
     {
       name: 'title',
       type: 'string',
-      title: 'Question',
-      description: 'Ask',
+      title: 'Title',
     },
+    {
+      name: 'qoustion',
+      type: 'string',
+      title: 'Question',
+    },
+
     {
       name: 'excerpt',
       type: 'excerptPortableText',
@@ -19,12 +24,6 @@ export default {
       name: 'publishedAt',
       type: 'datetime',
       title: 'Published at',
-      description: 'This can be used to schedule post for publishing',
-    },
-    {
-      name: 'body',
-      type: 'bodyPortableText',
-      title: 'Body',
     },
   ],
   orderings: [
@@ -61,7 +60,6 @@ export default {
     select: {
       title: 'title',
       publishedAt: 'publishedAt',
-      slug: 'slug',
       media: 'mainImage',
     },
     prepare({ title = 'No title', media }) {

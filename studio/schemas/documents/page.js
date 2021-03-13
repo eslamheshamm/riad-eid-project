@@ -15,11 +15,12 @@ export default {
       description: 'Add, edit, and reorder sections',
       of: [
         { type: 'hero' },
+        { type: 'reviewsHome' },
+        { type: 'questionsHome' },
         { type: 'uiComponentRef' },
         { type: 'infoRows' },
         { type: 'ctaColumns' },
         { type: 'ctaPlug' },
-        { type: 'reviewsHome' },
       ],
     },
   ],
