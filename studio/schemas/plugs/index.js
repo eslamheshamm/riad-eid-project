@@ -6,6 +6,11 @@ export { default as ctaColumns } from './ctaColumns'
 export { default as ctaPlug } from './ctaPlug'
 export { default as uiComponentRef } from './uiComponent'
 export { default as pricing } from './pricing'
+export { default as reviewsHome } from './reviews-home'
+export { default as reviewsRef } from './reviews-ref'
+export { default as questionsHome } from './questions-home'
+export { default as questionsRef } from './questions-ref'
+
 /*
 export { default as cta } from './cta'
 export { default as generalArticle } from './article'

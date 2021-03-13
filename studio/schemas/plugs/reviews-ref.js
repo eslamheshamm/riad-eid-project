@@ -6,11 +6,12 @@ export default {
     {
       type: 'illustration',
       name: 'illustration',
+      title: 'Country Flag',
     },
     {
       name: 'title',
       type: 'string',
-      title: 'Question',
+      title: 'Country',
       validation: (Rule) => Rule.error('You have to fill this out.').required(),
     },
     {
