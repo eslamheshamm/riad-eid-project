@@ -27,6 +27,7 @@ export const query = graphql`
             alt
           }
           title
+          country
           _rawExcerpt
         }
       }
