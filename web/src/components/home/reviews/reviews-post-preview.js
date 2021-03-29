@@ -30,8 +30,8 @@ const maybeImage = illustration => {
 function ReviewsPostPreview(props) {
   const date = props.publishedAt;
 
-  const img = maybeImage(props.countryFlag);
-
+  const img = maybeImage(props.illustration);
+  console.log(img, "img");
   return (
     <div className={props.isInList ? styles.inList : styles.inGrid}>
       <div className="flex flex-col py-4 px-8 text-black">
