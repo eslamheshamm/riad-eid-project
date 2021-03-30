@@ -51,7 +51,9 @@ const InfoRows = props => {
       <h1 className="w-full my-6 text-3xl  leading-snug text-center text-black font-yasser">
         {props.title}
       </h1>
-      <p className="w-full text-center text-black leading-snug mb-16">{props.description}</p>
+      <div className="flex  justify-center">
+        <p className="w-11/12 sm:w-8/12  text-black leading-snug mb-16">{props.description}</p>
+      </div>
       <div className="  mx-auto m-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {contentRows}
       </div>
