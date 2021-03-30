@@ -39,13 +39,13 @@ function ReviewsPostPreview(props) {
             {img && <div className="w-8 ml-1 rounded-md ">{img}</div>}
             <h3 className={cn(styles.title)}>{props.title}</h3>
           </div>
-          <div className={styles.date}>
+          <div className={cn(styles.date, "opacity-50")}>
             منذ {date && formatDistanceToNow(new Date(date), { locale: arSA })}
           </div>
 
           <div className="flex flex-col items-start">
             {props.text && (
-              <div className={styles.excerpt}>
+              <div className={cn(styles.excerpt, "opacity-75")}>
                 <PortableText blocks={props.text} />
               </div>
             )}

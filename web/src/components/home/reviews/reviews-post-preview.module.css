@@ -41,8 +41,6 @@
 .excerpt {
   font-size: 1.2rem;
   color: black;
-  opacity: 70%;
-
   @nest & strong {
     font-weight: 600;
   }
@@ -54,5 +52,4 @@
   margin-bottom: 1rem;
   line-height: var(--font-small-line-height);
   color: black;
-  opacity: 60%;
 }
