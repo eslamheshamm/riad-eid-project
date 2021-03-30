@@ -42,9 +42,9 @@ const CTALink = props => {
       <button
         id="navAction"
         onClick={() => doNavigate(link)}
-        className={cn(styles.whatsapp, "py-4 px-2  sm:py-6 sm:px-8")}
+        className={cn(styles.whatsapp, "py-4 px-3  sm:py-6 sm:px-8")}
       >
-        <i className="mx-4">
+        <i className="ml-4">
           <Whatsapp />
         </i>
         <span> {props.title}</span>
