@@ -1,6 +1,8 @@
 import React from "react";
 import { Link, navigate } from "gatsby";
 import styles from "./CTALink.module.css";
+import { cn } from "../lib/helpers";
+
 const doNavigate = target => {
   if (!target || !target.length) {
     return;
@@ -40,7 +42,7 @@ const CTALink = props => {
       <button
         id="navAction"
         onClick={() => doNavigate(link)}
-        className={`${styles.whatsapp}` || "text-black"}
+        className={cn(styles.whatsapp, "py-4 px-2  sm:py-6 sm:px-8")}
       >
         <i className="mx-4">
           <Whatsapp />

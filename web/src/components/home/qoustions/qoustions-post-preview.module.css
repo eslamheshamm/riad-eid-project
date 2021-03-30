@@ -53,10 +53,8 @@
 }
 
 .excerpt {
-  @nest & p {
-    padding: 0rem 0rem;
-    margin: 0.7rem 0rem;
-  }
+  padding: 0rem 0rem;
+  margin: 0.7rem 0rem;
 
   @nest & strong {
     font-weight: 600;

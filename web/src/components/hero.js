@@ -44,7 +44,7 @@ function Hero(props) {
         )}
       </div>
       {/* Right col */}
-      <div className="flex items-center row-start-1 lg:row-start-auto justify-center">
+      <div className="flex items-center row-start-1 lg:row-start-auto justify-center mb-12">
         <div className="sm:w-9/12 lg:w-8/12">{img}</div>
       </div>
     </div>

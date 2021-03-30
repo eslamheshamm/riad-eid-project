@@ -10,6 +10,7 @@ import styles from "./reviews-post-preview.module.css";
 
 function ReviewsPostPreview(props) {
   const date = props.publishedAt;
+  console.log(props._rawExcerpt, "textt");
   return (
     <div className={props.isInList ? styles.inList : styles.inGrid}>
       <div className="flex flex-col py-4 px-8">

@@ -106,7 +106,7 @@ const Page = ({ data, errors }) => {
           class: "leading-normal tracking-normal text-white gradient"
         }}
       />
-      <div className="pt-24">{content}</div>
+      <div className="my-12">{content}</div>
     </Layout>
   );
 };

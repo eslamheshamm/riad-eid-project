@@ -9,14 +9,14 @@ function ReviewsPostPreviewGrid(props) {
   //   // return <ReviewsPostPreview key={r._key} {...r} isInList />;
   // });
   // console.log(contentRows);
-  console.log(props, "title");
+
   return (
     <div className="w-full text-black my-32">
       <div className="text-center mb-12">
         {props.title && <h2 className="text-4xl font-yasser my-6 text-black">{props.title}</h2>}
         <p className="text-lg">{props.description}</p>
       </div>
-      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 w-full gap-8 h-auto">
+      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 w-full gap-6 h-auto">
         {props.rows &&
           props.rows.map(node => (
             <li key={node.id}>

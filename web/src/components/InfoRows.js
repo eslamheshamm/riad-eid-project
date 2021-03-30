@@ -18,7 +18,7 @@ const maybeImage = illustration => {
       clientConfig.sanity
     );
 
-    img = <img className="w-full sm:h-20" src={fluidProps.src} alt={illustration.image.alt} />;
+    img = <img className="w-full " src={fluidProps.src} alt={illustration.image.alt} />;
   }
   return img;
 };
@@ -28,7 +28,7 @@ const InfoRow = props => {
   return (
     <div className={"flex p-4 pb-8 shadow-lg flex-col rounded-3xl"}>
       <div>
-        {img && <div className="w-16 ">{img}</div>}
+        {img && <div className="w-10 ">{img}</div>}
 
         <h3 className="text-2xl text-black leading-snug my-4 font-yasser">{props.title}</h3>
         <p className="text-black">
@@ -52,7 +52,7 @@ const InfoRows = props => {
         {props.title}
       </h1>
       <p className="w-full text-center text-black leading-snug mb-16">{props.description}</p>
-      <div className="  mx-auto m-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="  mx-auto m-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {contentRows}
       </div>
     </section>
