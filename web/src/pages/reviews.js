@@ -14,7 +14,6 @@ export const query = graphql`
       title
     }
     posts: allSanityReviews(
-      limit: 6
       sort: { fields: [publishedAt], order: DESC }
       filter: { publishedAt: { ne: null } }
     ) {
@@ -62,10 +61,6 @@ const Reviews = ({ data, errors }) => {
       <Container>
         <div className="flex flex-col items-center mb-12 ">
           <h1 className="mb-4 text-4xl font-yasser">توصيات</h1>
-          <p>
-            نسبة النجاح في هذا الامر تصل إلي 95% في حال التزام الزوجين بجميع التوصيات المذكورة في
-            البرنامج.
-          </p>
         </div>
         <div className="py-6 mb-56">
           {postNodes && <ReviewsPostPreviewList nodes={postNodes} />}

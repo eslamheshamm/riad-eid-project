@@ -73,10 +73,11 @@ const IndexPage = props => {
       />
       <Container>
         <div className="flex flex-col mb-12 ">
-          <h1 className="mb-4 text-4xl font-yasser">مقالات عن صحة الأطفال</h1>
+          <h1 className="mb-4 text-4xl font-yasser">المدونة</h1>
           <p>
-            نسبة النجاح في هذا الامر تصل إلي 95% في حال التزام الزوجين بجميع التوصيات المذكورة في
-            البرنامج.
+            في هذه المدونة ستجد مقالات مفيدة عن صحة الأطفال وبرنامج تحديد جنس المولود قبل الحمل
+            يكتبها الخبير رياض عيد الخبير الأول في الوطن العربي في تحديد جنس المولود قبل الحمل
+            واستشارات الحمل
           </p>
         </div>
         <div className="py-6 mb-56">{postNodes && <BlogPostPreviewList nodes={postNodes} />}</div>

@@ -76,10 +76,10 @@ const Press = ({ data, errors }) => {
       />
       <Container>
         <div className="flex flex-col mb-12 ">
-          <h1 className="mb-4 text-4xl font-yasser">مقالات عن صحة الأطفال</h1>
+          <h1 className="mb-4 text-4xl font-yasser">الصحافة</h1>
           <p>
-            نسبة النجاح في هذا الامر تصل إلي 95% في حال التزام الزوجين بجميع التوصيات المذكورة في
-            البرنامج.
+            أقرأ ماذا كتبت الصحافة عن الخبير رياض عيد الخبير الأول في تحديد جنس المولود قبل الحمل
+            وعن برنامجه الأنجح في الشرق الأوسط والعالم البرنامج.
           </p>
         </div>
         <div className="py-6 mb-56">{postNodes && <PressPostPreviewList nodes={postNodes} />}</div>
