@@ -34,7 +34,7 @@ function ReviewsPostPreview(props) {
   return (
     <div className={props.isInList ? styles.inList : styles.inGrid}>
       <div className="flex flex-col py-4 px-8 text-black">
-        <div className="flex flex-col items-start justify-start ">
+        <div className="flex flex-col items-start justify-start text-black ">
           <div className="flex items-center">
             {img && <div className="w-8 ml-1 rounded-md ">{img}</div>}
             <h3 className={cn(styles.title)}>{props.title}</h3>
@@ -45,7 +45,7 @@ function ReviewsPostPreview(props) {
 
           <div className="flex flex-col items-start">
             {props.text && (
-              <div className={cn(styles.excerpt, "text-lg text-black")}>
+              <div className={styles.excerpt}>
                 <PortableText blocks={props.text} />
               </div>
             )}
