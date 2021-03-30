@@ -18,11 +18,7 @@ function AboutProgramSteps() {
       <h1 className="w-full my-6 text-6xl  leading-snug text-center text-black font-yasser">
         كيف يعمل البرنامج
       </h1>
-      <p className="w-6/12 mx-auto text-center text-black leading-snug mb-16">
-        بولد او بنت بحيث عند حدوث الحمل بمشيئة الله يكون حسب رغبة الزوجين ان شاء الله وبنسبة نجاح
-        95️ % بشكل تقريبي، وأيضًا عدد ايام بين كل دوره والاخرى، وبعدها يعطيكي تواريخ الجماع المناسبة
-        للحمل
-      </p>
+      <p className="w-6/12 mx-auto text-center text-black leading-snug mb-16">نص تجريبي</p>
       <div className="  mx-auto m-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <InfoRow
           number="1"

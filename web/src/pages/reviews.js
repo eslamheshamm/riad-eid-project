@@ -1,8 +1,7 @@
 import React from "react";
 import Layout from "../containers/layout";
-
 import { graphql } from "gatsby";
-import { mapEdgesToNodes, filterOutDocsPublishedInTheFuture } from "../lib/helpers";
+import { mapEdgesToNodes } from "../lib/helpers";
 import ReviewsPostPreviewList from "../components/reviews/reviews-post-preview-list";
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
