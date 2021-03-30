@@ -70,12 +70,12 @@ const Footer = () => (
           <p className=" text-black text-lg md:mb-6 font-yasser">عن رياض عيد</p>
           <ul className="list-reset mb-6">
             <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-              <Link to="/">
+              <Link to="/about-us">
                 <span className="hover:underline text-gray-800 text-sm mb-3">من نحن</span>
               </Link>
             </li>
             <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-              <Link to="/">
+              <Link to="/blog">
                 <span className="hover:underline text-gray-800 text-sm mb-3">المدونة</span>
               </Link>
             </li>
@@ -85,7 +85,7 @@ const Footer = () => (
               </Link>
             </li>
             <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-              <Link to="/">
+              <Link to="/press">
                 <span className="hover:underline text-gray-800 text-sm mb-3">الصحافة والإعلام</span>
               </Link>
             </li>
@@ -95,29 +95,29 @@ const Footer = () => (
           <p className=" text-black text-lg md:mb-6 font-yasser">عن البرنامج</p>
           <ul className="list-reset mb-6">
             <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-              <Link to="/">
+              <Link to="/questions">
                 <span className="hover:underline text-gray-800 text-sm mb-3">اسئلة شائعة</span>
               </Link>
             </li>
             <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-              <Link to="/">
-                <span className="hover:underline text-gray-800 text-sm mb-3">تواصل معنا</span>
+              <Link to="/reviews">
+                <span className="hover:underline text-gray-800 text-sm mb-3">توصيات</span>
               </Link>
             </li>
             <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-              <Link to="/">
-                <span className="hover:underline text-gray-800 text-sm mb-3">الصحافة والإعلام</span>
+              <Link to="/interviews">
+                <span className="hover:underline text-gray-800 text-sm mb-3">المقابلات</span>
               </Link>
             </li>
           </ul>
         </div>
         <div className="flex-1">
-          <p className=" text-black text-lg md:mb-6 font-yasser">تحميل التطبيق</p>
+          <p className=" text-black text-lg md:mb-6 font-yasser">حمل التطبيق الآن</p>
           <ul className="list-reset mb-6">
             <li className="mt-2 inline-block mr-2 md:block md:mr-0">
               <p className="text-black my-6 opacity-75">
-                التزم الزوجين بجميع التوصيات المذكورة في البرنامج ونسبة النجاح في هذا الامر تصل إلي
-                95% في حال لدي السيدة
+                حمل تطبيق تحديد جنس المولود قبل الحمل وأقترب خطوة لتحقيق حلمك والحصول على مولودك
+                المرغوب إن شاء الله
               </p>
             </li>
             <li className="mt-2 inline-block mr-2 md:block md:mr-0">
