@@ -162,8 +162,8 @@ const Footer = () => (
                   <GooglePlay />
                 </a>
               </li>
-              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="https://bit.ly/3pDhROf" target="_blank" rel="noreferrer">
+              <li className="mt-2 md:mt-1 inline-block mr-2 md:block md:mr-2">
+                <a href="https://riadeid.com/online0219/" target="_blank" rel="noreferrer">
                   <AppleSttore />
                 </a>
               </li>
