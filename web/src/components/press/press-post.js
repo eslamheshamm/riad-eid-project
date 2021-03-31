@@ -11,7 +11,7 @@ import styles from "./press-post.module.css";
 function PressPost(props) {
   const { _rawBody, title, mainImage } = props;
   return (
-    <article className="w-7/12 mx-auto">
+    <article className="w-8/12 mx-auto">
       {mainImage && mainImage.asset && (
         <div className={styles.mainImage}>
           <img
@@ -29,28 +29,8 @@ function PressPost(props) {
         <div>
           <div className={styles.mainContent}>
             <h1 className={`font-yasser text-4xl my-6`}>{title}</h1>
-            <div className="mb-32"> {_rawBody && <PortableText blocks={_rawBody} />}</div>
+            <div className="mb-32">{_rawBody && <PortableText blocks={_rawBody} />}</div>
           </div>
-          {/* <aside className={styles.metaContent}>
-            {publishedAt && (
-              <div className={styles.publishedAt}>
-                {differenceInDays(new Date(publishedAt), new Date()) > 3
-                  ? distanceInWords(new Date(publishedAt), new Date())
-                  : format(new Date(publishedAt), "MMMM Do, YYYY")}
-              </div>
-            )}
-            {authors && <AuthorList items={authors} title='Authors' />}
-            {categories && (
-              <div className={styles.categories}>
-                <h3 className={styles.categoriesHeadline}>Categories</h3>
-                <ul>
-                  {categories.map(category => (
-                    <li key={category._id}>{category.title}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </aside> */}
         </div>
       </Container>
     </article>

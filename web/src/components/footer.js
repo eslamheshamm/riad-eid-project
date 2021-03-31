@@ -57,10 +57,14 @@ const Footer = () => (
             لجميع التوصيات المذكورة في البرنامج التزام الزوجين
           </p>
           <div className="flex">
-            <a href="/" className="ml-6">
+            <a href="instagram.com/eid.riad/" target="_blank" rel="noreferrer" className="ml-6">
               <Instagram />
             </a>
-            <a href="/">
+            <a
+              href="https://www.youtube.com/user/123qwe456rtyable"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Youtube />
             </a>
           </div>
@@ -80,9 +84,9 @@ const Footer = () => (
               </Link>
             </li>
             <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-              <Link to="/">
+              <a href="http://bit.ly/3aH6YWw" rel="noreferrer" target="_blank">
                 <span className="hover:underline text-gray-800 text-sm mb-3">تواصل معنا</span>
-              </Link>
+              </a>
             </li>
             <li className="mt-2 inline-block mr-2 md:block md:mr-0">
               <Link to="/press">
@@ -121,7 +125,7 @@ const Footer = () => (
               </p>
             </li>
             <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-              <a href="/">
+              <a href="https://bit.ly/3pDhROf" target="_blank" rel="noreferrer">
                 <GooglePlay />
               </a>
             </li>

@@ -70,12 +70,13 @@
   @nest & figure {
     margin: 0;
     padding: 0;
-
     @nest & img {
-      max-width: 100%;
+      width: 100%;
     }
   }
-
+  @nest & img {
+    width: 100%;
+  }
   @nest & ol {
     margin-left: 1.5em;
     list-style: decimal;
