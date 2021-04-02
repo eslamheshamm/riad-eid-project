@@ -6,7 +6,6 @@ import PortableText from "../../portableText";
 import styles from "./qoustions-post-preview.module.css";
 
 function QoustionsPostPreview(props) {
-  console.log(props.text, "text");
   return (
     <div className={props.isInList ? styles.inList : styles.inGrid}>
       <div className="flex py-4 px-4 sm:px-8">

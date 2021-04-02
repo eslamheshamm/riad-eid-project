@@ -11,7 +11,7 @@ import styles from "./press-post.module.css";
 function PressPost(props) {
   const { _rawBody, title, mainImage } = props;
   return (
-    <article className="w-8/12 mx-auto">
+    <article className="sm:w-8/12 mx-auto">
       {mainImage && mainImage.asset && (
         <div className={styles.mainImage}>
           <img

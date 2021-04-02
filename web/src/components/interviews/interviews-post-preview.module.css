@@ -26,8 +26,8 @@
   @nest & img {
     border-radius: 1.5rem;
     width: 100%;
-    height: 500px;
-    object-fit: cover;
+    height: 100%;
+    object-fit: fill;
   }
 }
 .play {
@@ -39,9 +39,6 @@
   /* empty */
   padding: 0rem 0.5rem;
   color: black;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   height: 100%;
   justify-content: flex-end;
 }

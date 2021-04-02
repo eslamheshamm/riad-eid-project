@@ -31,7 +31,7 @@ const InterviewsPostTemplate = props => {
   const { data, errors } = props;
   const press = data && data.press;
   return (
-    <Layout textWhite={true}>
+    <Layout>
       {errors && <SEO title="GraphQL Error" />}
       {press && (
         <SEO

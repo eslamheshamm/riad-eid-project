@@ -75,7 +75,7 @@
     }
   }
   @nest & img {
-    width: 100%;
+    object-fit: fill;
   }
   @nest & ol {
     margin-left: 1.5em;

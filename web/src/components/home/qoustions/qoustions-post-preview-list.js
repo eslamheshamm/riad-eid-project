@@ -4,7 +4,6 @@ import QoustionsPostPreview from "./qoustions-post-preview";
 import styles from "./qoustions-post-preview-list.module.css";
 
 function QoustionsPostPreviewGrid(props) {
-  console.log(props.title, "data");
   return (
     <div className="w-full text-black my-32">
       <div className="text-center mb-12">
