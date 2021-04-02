@@ -72,8 +72,10 @@ const Footer = () => (
           >
             <img src={Logo} alt="logo" />
           </a>
-          <p className="text-black my-6 opacity-75">
-            لجميع التوصيات المذكورة في البرنامج التزام الزوجين
+          <h2 className="font-yasser mt-6 text-xl">منصات التواصل الاجتماعي</h2>
+          <p className="text-black mt-2 mb-6 opacity-75">
+            قرب المسافة الأن وتابعنا علي منصات التواصل الإجتماعي لتعرف كل جديد عن برنامج تحديد جنس
+            المولود قبل الحمل.
           </p>
           <div className="flex">
             <a
