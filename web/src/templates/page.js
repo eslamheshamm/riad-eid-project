@@ -37,7 +37,6 @@ export const query = graphql`
 `;
 
 const Page = ({ data, errors }) => {
-  console.log(data);
   if (errors) {
     return (
       <Layout>
