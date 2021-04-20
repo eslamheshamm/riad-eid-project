@@ -1,20 +1,4 @@
 
-## What you have
-
-Concepts covered in this starter are:
-
-- How to use the Studio‘s page builder to create landing pages, and present them in a web frontend
-- Edit blog posts with side-by-side web-previews, can be configured to [Gatsby Preview](https://www.gatsbyjs.com/) for real-time previewing in production and not just local development
-- How to manage SEO metadata like fields for Open Graph meta-tags
-- How to set up navigation for structured content, which allows for proper decoupling and omni-channel
-- Custom embedded objects in rich text for Instagram posts, social media videos, LaTeX math etc.
-- [Field validations](https://www.sanity.io/docs/validation)
-- Custom [slugify functions with promises](https://www.sanity.io/docs/slug-type#custom-slugify-function-e1531d9d041b)
-- Examples of how to use plugins and custom input components
-- Examples of custom document and document type lists using [structure builder](https://www.sanity.io/docs/overview-structure-builder)
-- Custom asset sources for Unsplash and AI-generated person photos
-- …and more
-
 Technologies:
 
 - A blazing frontend of landing pages and a blog with [Gatsby.js](https://gatsbyjs.org)
@@ -48,12 +32,3 @@ For the 'Web preview' tabs in the Studio editors to work with a remote live prev
 
 Should you want to host Gatsby in live preview yourself we have also included a Dockerfile and (.dockerignore) as a starting point in the web/ folder. Deploying that container is outside the scope of this example. There are many guides online on how to do that.
 
-## Deploy changes
-
-Netlify automatically deploys new changes commited to master on GitHub. If you want to change deployment branch, do so in [build & deploy settings on Netlify](https://www.netlify.com/docs/continuous-deployment/#branches-deploys).
-
-## Stuck? Get help
-
-[![Slack Community Button](https://slack.sanity.io/badge.svg)](https://slack.sanity.io/)
-
-Join [Sanity’s developer community](https://slack.sanity.io) or ping us [on twitter](https://twitter.com/sanity_io).
