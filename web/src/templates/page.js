@@ -8,9 +8,11 @@ import CTAColumns from "../components/cta-columns";
 import CTA from "../components/cta";
 import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
+
 import Layout from "../containers/layout";
 import ReviewsPostPreviewList from "../components/home/reviews/reviews-post-preview-list";
 import QoustionsPostPreviewGrid from "../components/home/qoustions/qoustions-post-preview-list";
+import Form from "../components/form";
 
 export const query = graphql`
   query PageTemplateQuery($id: String!) {
@@ -56,7 +58,7 @@ const Page = ({ data, errors }) => {
   const page = data.page || data.route.page;
 
   const content = (page._rawContent || [])
-    .filter(c => !c.disabled)
+    .filter((c) => !c.disabled)
     .map((c, i) => {
       let el = null;
       switch (c._type) {
@@ -83,6 +85,9 @@ const Page = ({ data, errors }) => {
             case "programSteps":
               el = <AboutProgramSteps />;
               break;
+            case "form":
+              el = <Form />;
+              break;
             default:
               break;
           }
@@ -102,7 +107,7 @@ const Page = ({ data, errors }) => {
         description={site.description}
         keywords={site.keywords}
         bodyAttr={{
-          class: "leading-normal tracking-normal text-white gradient"
+          class: "leading-normal tracking-normal text-white gradient",
         }}
       />
       <div className="my-12">{content}</div>

@@ -4,8 +4,6 @@ import { buildImageObj } from "../../lib/helpers";
 import { imageUrlFor } from "../../lib/image-url";
 import PortableText from "../portableText";
 import Container from "../container";
-// import AuthorList from "./author-list";
-// authors, categories,publishedAt
 import styles from "./press-post.module.css";
 
 function PressPost(props) {
