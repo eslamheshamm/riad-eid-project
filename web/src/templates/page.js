@@ -58,7 +58,7 @@ const Page = ({ data, errors }) => {
   const page = data.page || data.route.page;
 
   const content = (page._rawContent || [])
-    .filter((c) => !c.disabled)
+    .filter(c => !c.disabled)
     .map((c, i) => {
       let el = null;
       switch (c._type) {
@@ -107,7 +107,7 @@ const Page = ({ data, errors }) => {
         description={site.description}
         keywords={site.keywords}
         bodyAttr={{
-          class: "leading-normal tracking-normal text-white gradient",
+          class: "leading-normal tracking-normal text-white gradient"
         }}
       />
       <div className="my-12">{content}</div>

@@ -80,7 +80,7 @@ const IndexPage = props => {
             واستشارات الحمل
           </p>
         </div>
-        <div className="py-6 mb-56">{postNodes && <BlogPostPreviewList nodes={postNodes} />}</div>
+        <div className="my-6 mb-56">{postNodes && <BlogPostPreviewList nodes={postNodes} />}</div>
       </Container>
     </Layout>
   );

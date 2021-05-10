@@ -4,7 +4,7 @@ import Logo from "./images/logo-line.png";
 const Header = () => {
   return (
     <nav className=" w-full text-black font-yasser text-base">
-      <div className="w-full  mx-auto flex flex-wrap items-center   justify-center lg:justify-between mt-0 py-16 ">
+      <div className="w-full  mx-auto flex flex-wrap items-center   justify-center lg:justify-between my-16 ">
         <div className=" flex items-center ">
           <Link id="siteTitle" to="/">
             <img src={Logo} alt="logo" />

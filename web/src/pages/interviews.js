@@ -77,7 +77,7 @@ const Interviews = ({ data, errors }) => {
             البرنامج والكثير من المعلومات الهامة حول تحديد جنس المولود قبل الحمل
           </p>
         </div>
-        <div className="py-6 mb-56">
+        <div className="my-6 mb-56">
           {postNodes && <InterviewsPostPreviewList nodes={postNodes} />}
         </div>
       </Container>

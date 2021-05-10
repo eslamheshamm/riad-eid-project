@@ -65,7 +65,7 @@ const Qoustions = ({ data, errors }) => {
         <div className="flex flex-col items-center mb-12 ">
           <h1 className="mb-4 text-4xl font-yasser">الاسئلة الشائعة</h1>
         </div>
-        <div className="py-6 mb-56">
+        <div className="my-6 mb-56">
           {postNodes && <QoustionsPostPreviewList nodes={postNodes} />}
         </div>
       </Container>

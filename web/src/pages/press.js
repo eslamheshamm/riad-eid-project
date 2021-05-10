@@ -82,7 +82,7 @@ const Press = ({ data, errors }) => {
             وعن برنامجه الأنجح في الشرق الأوسط والعالم البرنامج.
           </p>
         </div>
-        <div className="py-6 mb-56">{postNodes && <PressPostPreviewList nodes={postNodes} />}</div>
+        <div className="my-6 mb-56">{postNodes && <PressPostPreviewList nodes={postNodes} />}</div>
       </Container>
     </Layout>
   );
