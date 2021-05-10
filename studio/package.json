@@ -1,9 +1,9 @@
 {
   "private": true,
-  "name": "sanity-kitchen-sink-studio",
-  "version": "1.0.7",
+  "name": "riad-eid-studio",
+  "version": "1.0.0",
   "main": "package.json",
-  "author": "Sanity <hello@sanity.io>",
+  "author": "eslamhesham",
   "scripts": {
     "dev": "sanity start",
     "format": "prettier-eslint --write \"**/*.js\" \"!node_modules/**\"",
