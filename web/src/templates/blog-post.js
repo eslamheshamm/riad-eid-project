@@ -16,10 +16,12 @@ export const query = graphql`
         ...SanityImage
         alt
       }
-      title
+      description
+      keywords
       slug {
         current
       }
+
       _rawExcerpt(resolveReferences: { maxDepth: 5 })
       _rawBody(resolveReferences: { maxDepth: 5 })
     }
@@ -37,6 +39,7 @@ const BlogPostTemplate = props => {
           title={post.title || "Untitled"}
           description={toPlainText(post._rawExcerpt)}
           image={post.mainImage}
+          keywords={post.keywords}
         />
       )}
 
