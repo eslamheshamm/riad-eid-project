@@ -3,7 +3,6 @@ import createSchema from 'part:@sanity/base/schema-creator'
 
 // Then import schema types from any plugins that might expose them
 import schemaTypes from 'all:part:@sanity/base/schema-type'
-import localeString from './objects/localeString'
 
 // posts
 import post from './documents/post'
@@ -16,7 +15,6 @@ import page from './documents/page'
 import siteSettings from './documents/siteSettings'
 import route from './documents/route'
 
-import experiment from './objects/experiment'
 import simpleBlockContent from './objects/simpleBlockContent'
 
 import * as plugs from './plugs'
@@ -29,7 +27,6 @@ import bodyPortableText from './objects/bodyPortableText'
 import excerptPortableText from './objects/excerptPortableText'
 import mainImage from './objects/mainImage'
 import link from './objects/link'
-import variation from './objects/variation'
 import openGraph from './objects/openGraph'
 import latex from './latex'
 
@@ -47,10 +44,7 @@ export default createSchema({
       interviews,
       pressPost,
       latex,
-      localeString,
-      variation,
       openGraph,
-      experiment,
       route,
       link,
       simpleBlockContent,
