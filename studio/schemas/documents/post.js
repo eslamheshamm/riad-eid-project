@@ -47,7 +47,7 @@ export default {
       title: 'SEO',
       type: 'seo-tools',
       options: {
-        baseUrl: 'http://localhost:8000/blog',
+        baseUrl: 'https://riadeid.net/blog',
         slug(doc) {
           return doc.slug.current
         },
@@ -55,6 +55,7 @@ export default {
           return doc.title
         },
         content(doc) {
+          console.log(doc, 'doc')
           return doc.content
         },
         fetchRemote: true, // Can be set to false to disable fetching the remote source (you will need to pass the content helpers for analysis)
