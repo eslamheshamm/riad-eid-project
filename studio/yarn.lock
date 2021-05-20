@@ -1690,9 +1690,9 @@
     rxjs "^6.5.3"
 
 "@sanity/ui@^0.33.19", "@sanity/ui@^0.33.24":
-  version "0.33.25"
-  resolved "https://registry.yarnpkg.com/@sanity/ui/-/ui-0.33.25.tgz#f6e8dbf0303094feef334da875fdf970616d4238"
-  integrity sha512-wjdCQza/4acG9HHlIe6ITMY1p7oSICLGuCXz696oZ9Rftd86FSv8hhnnypUCm4+IZPyq+1B6Ia/pKdgE923VvQ==
+  version "0.33.26"
+  resolved "https://registry.yarnpkg.com/@sanity/ui/-/ui-0.33.26.tgz#3f7d6cfef27d449a583072485a35f7aeb84ee216"
+  integrity sha512-Pse4V0FfeoSiFLDN4hZY9YaVlSRSH5LGKOOonnrN0/o2x2fN3nu6+H19AiS82i33g5eezrEeC83mpl+46bqU3w==
   dependencies:
     "@juggle/resize-observer" "^3.3.1"
     "@popperjs/core" "^2.9.2"
@@ -2969,9 +2969,9 @@ code-point-at@^1.0.0:
   integrity sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
 
 codemirror@^5.47.0:
-  version "5.61.0"
-  resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.61.0.tgz#318e5b034a707207948b92ffc2862195e8fdb08e"
-  integrity sha512-D3wYH90tYY1BsKlUe0oNj2JAhQ9TepkD51auk3N7q+4uz7A/cgJ5JsWHreT0PqieW1QhOuqxQ2reCXV1YXzecg==
+  version "5.61.1"
+  resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.61.1.tgz#ccfc8a43b8fcfb8b12e8e75b5ffde48d541406e0"
+  integrity sha512-+D1NZjAucuzE93vJGbAaXzvoBHwp9nJZWWWF9utjv25+5AZUiah6CIlfb4ikG4MoDsFsCG8niiJH5++OO2LgIQ==
 
 collection-visit@^1.0.0:
   version "1.0.0"
@@ -3852,9 +3852,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.30, electron-to-chromium@^1.3.723:
-  version "1.3.733"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.733.tgz#991844c0b0cf79f559e78232721da3acda1b7e0a"
-  integrity sha512-6VUgcqRBo7FC+SG08arfFwr9qKVnBSmagXN332SWvvG2j/26Xy7AfQMqPsVq3vVW4fw20SrnmBedQzTD3slVEQ==
+  version "1.3.734"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.734.tgz#c8d318a4eb27509190cf3a08870dbcbf06c74dcb"
+  integrity sha512-iQF2mjPZ6zNNq45kbJ6MYZYCBNdv2JpGiJC/lVx4tGJWi9MNg73KkL9sWGN4X4I/CP2SBLWsT8nPADZZpAHIyw==
 
 element-resize-detector@^1.1.14:
   version "1.2.2"
