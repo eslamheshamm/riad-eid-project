@@ -1,12 +1,13 @@
 // import { format } from "date-fns";
 import React from "react";
-import { cn } from "../../lib/helpers";
+import { Link } from "gatsby";
+
+import { getQuestionsUrl } from "../../lib/helpers";
 import PortableText from "../portableText";
 
 import styles from "./qoustions-post-preview.module.css";
 
 function QoustionsPostPreview(props) {
-  console.log(props.quetsion);
   return (
     <div className={props.isInList ? styles.inList : styles.inGrid}>
       <div className="flex py-4 px-8">
@@ -16,7 +17,14 @@ function QoustionsPostPreview(props) {
           </div>
 
           <div className="flex flex-col items-start mr-6">
-            <h3 className={cn(styles.title)}>{props.qoustion}</h3>
+            <h3 className={styles.title}>
+              <Link
+                to={getQuestionsUrl(props.slug.current)}
+                className="focus:outline-none hover:underline"
+              >
+                {props.qoustion}
+              </Link>
+            </h3>
 
             {props._rawExcerpt && (
               <div className={styles.excerpt}>

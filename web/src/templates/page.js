@@ -23,6 +23,7 @@ export const query = graphql`
       useSiteTitle
       page {
         ...PageInfo
+        description
       }
     }
     site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
@@ -99,15 +100,18 @@ const Page = ({ data, errors }) => {
     });
 
   const pageTitle = data.route && !data.route.useSiteTitle && page.title;
-
+  console.log(page.description);
+  console.log(page);
+  console.log(page.title);
+  console.log(site);
   return (
     <Layout>
       <SEO
-        title={pageTitle}
-        description={site.description}
-        keywords={site.keywords}
+        title={page.title}
+        description={page.description}
+        keywords={site.openGraph.keywords}
         bodyAttr={{
-          class: "leading-normal tracking-normal text-white gradient"
+          class: "leading-normal tracking-normal"
         }}
       />
       <div className="my-12">{content}</div>

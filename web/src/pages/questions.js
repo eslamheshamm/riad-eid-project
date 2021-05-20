@@ -24,17 +24,15 @@ export const query = graphql`
           title
           qoustion
           _rawExcerpt
+          slug {
+            current
+          }
         }
       }
     }
   }
 `;
 const Qoustions = ({ data, errors }) => {
-  // return (
-  //   <Layout>
-  //     <h1>Pres Page</h1>
-  //   </Layout>
-  // );
   if (errors) {
     return (
       <Layout>
@@ -47,7 +45,6 @@ const Qoustions = ({ data, errors }) => {
   const postNodes = (data || {}).posts
     ? mapEdgesToNodes(data.posts).filter(filterOutDocsPublishedInTheFuture)
     : [];
-  console.log(postNodes);
   if (!site) {
     console.warn(
       'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
@@ -57,8 +54,8 @@ const Qoustions = ({ data, errors }) => {
   return (
     <Layout>
       <SEO
-        title={site.title || "Missing title"}
-        description={site.description || "Missing description"}
+        title={"الاسئلة الشائعة"}
+        description={"الاسئلة الشائعة للخبير رياض عيد"}
         keywords={site.keywords || []}
       />
       <Container>

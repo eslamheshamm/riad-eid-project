@@ -156,10 +156,45 @@ async function createInterviewsPostPages(pathPrefix = "/interviews", graphql, ac
       });
     });
 }
+async function createQuestionsPostPages(pathPrefix = "/questions", graphql, actions, reporter) {
+  const { createPage } = actions;
+  const result = await graphql(`
+    {
+      allSanityQuestions(filter: { slug: { current: { ne: null } } }) {
+        edges {
+          node {
+            id
+            publishedAt
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  if (result.errors) throw result.errors;
+
+  const postEdges = (result.data.allSanityQuestions || {}).edges || [];
+  postEdges
+    .filter(edge => !isFuture(edge.node.publishedAt))
+    .forEach(edge => {
+      const { id, slug = {} } = edge.node;
+      const path = `${pathPrefix}/${slug.current}/`;
+      reporter.info(`Creating Questions post page: ${path}`);
+      createPage({
+        path,
+        component: require.resolve("./src/templates/question-post.js"),
+        context: { id }
+      });
+    });
+}
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   await createLandingPages("/", graphql, actions, reporter);
   await createBlogPostPages("/blog", graphql, actions, reporter);
   await createPressPostPages("/press", graphql, actions, reporter);
   await createInterviewsPostPages("/interviews", graphql, actions, reporter);
+  await createQuestionsPostPages("/questions", graphql, actions, reporter);
 };
