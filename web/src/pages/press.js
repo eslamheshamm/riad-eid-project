@@ -70,8 +70,8 @@ const Press = ({ data, errors }) => {
   return (
     <Layout>
       <SEO
-        title={site.title || "Missing title"}
-        description={site.description || "Missing description"}
+        title={"الصحافة"}
+        description={"ماذا كتبت الصحافة عن ریاض خبیر تحدید جنس المولود قبل الحمل "}
         keywords={site.keywords || []}
       />
       <Container>

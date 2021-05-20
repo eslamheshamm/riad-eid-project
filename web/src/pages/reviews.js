@@ -43,7 +43,6 @@ const Reviews = ({ data, errors }) => {
 
   const site = (data || {}).site;
   const postNodes = (data || {}).posts ? mapEdgesToNodes(data.posts) : [];
-  console.log(postNodes);
   if (!site) {
     console.warn(
       'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
@@ -53,9 +52,8 @@ const Reviews = ({ data, errors }) => {
   return (
     <Layout>
       <SEO
-        title={site.title || "Missing title"}
-        description={site.description || "Missing description"}
-        keywords={site.keywords || []}
+        title={"توصيات"}
+        description={"توصیات العملاء للخبیر ریاض عید خبیر تحدید جنس المولود قبل الحمل"}
       />
       <Container>
         <div className="flex flex-col items-center mb-12 ">

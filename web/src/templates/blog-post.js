@@ -16,8 +16,6 @@ export const query = graphql`
         ...SanityImage
         alt
       }
-      description
-      keywords
       slug {
         current
       }

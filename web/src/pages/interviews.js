@@ -65,9 +65,8 @@ const Interviews = ({ data, errors }) => {
   return (
     <Layout>
       <SEO
-        title={site.title || "Missing title"}
-        description={site.description || "Missing description"}
-        keywords={site.keywords || []}
+        title={"مقابلات"}
+        description={"مقابلات الخبیر ریاض عید خبیر تحدید جنس المولود قبل الحمل :"}
       />
       <Container>
         <div className="flex flex-col mb-12 ">

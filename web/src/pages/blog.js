@@ -67,9 +67,8 @@ const IndexPage = props => {
   return (
     <Layout>
       <SEO
-        title={site.title || "Missing title"}
-        description={site.description || "Missing description"}
-        keywords={site.keywords || []}
+        title={"تحدید جنس المولود"}
+        description={"طریقة تحدید جنس المولود قبل الحمل بشكل عملي"}
       />
       <Container>
         <div className="flex flex-col mb-12 ">
