@@ -26,7 +26,9 @@ export function getPressUrl(slug) {
 export function getInterviewsUrl(slug) {
   return `/interviews/${slug.current || slug}/`;
 }
-
+export function getQuestionsUrl(slug) {
+  return `/questions/${slug.current || slug}/`;
+}
 export function buildImageObj(source = { asset: {} }) {
   const imageObj = {
     asset: { _ref: source.asset._ref || source.asset._id }
