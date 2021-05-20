@@ -45,9 +45,9 @@ export default {
     {
       name: 'seo',
       title: 'SEO',
-      type: 'seo-tools', // use seo-tools type
+      type: 'seo-tools',
       options: {
-        baseUrl: 'http://localhost:8000/blog',
+        baseUrl: 'https://riadeid.net/blog',
         slug(doc) {
           return doc.slug.current
         },
