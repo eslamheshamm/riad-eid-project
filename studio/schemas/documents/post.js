@@ -37,29 +37,6 @@ export default {
       description:
         'This ends up on summary pages, on Google, when people share your post in social media.',
     },
-    // {
-    //   name: 'authors',
-    //   title: 'Authors',
-    //   type: 'array',
-    //   of: [
-    //     {
-    //       type: 'authorReference',
-    //     },
-    //   ],
-    // },
-    // {
-    //   name: 'categories',
-    //   type: 'array',
-    //   title: 'Categories',
-    //   of: [
-    //     {
-    //       type: 'reference',
-    //       to: {
-    //         type: 'category',
-    //       },
-    //     },
-    //   ],
-    // },
     {
       name: 'body',
       type: 'bodyPortableText',
@@ -70,21 +47,17 @@ export default {
       title: 'SEO',
       type: 'seo-tools', // use seo-tools type
       options: {
-        baseUrl: 'http://localhost:8000/', // (REQUIRED) This is the baseUrl for your site
+        baseUrl: 'http://localhost:8000/blog',
         slug(doc) {
-          // (REQUIRED) a function to return the sug of the current page, which will be appended to the baseUrl
           return doc.slug.current
         },
-        fetchRemote: true, // Can be set to false to disable fetching the remote source (you will need to pass the content helpers for analysis)
-        content(doc) {
-          return 'body' // (OPTIONAL) If your site is generated after Sanity content updates you can use this for better real time feedback
-        },
         title(doc) {
-          return 'page title' // (OPTIONAL) return page title otherwise inferred from scrape
+          return doc.title
         },
-        description(doc) {
-          return 'page description' // (OPTIONAL) return page description otherwise inferred from scrape
+        content(doc) {
+          return doc.content
         },
+        fetchRemote: true, // Can be set to false to disable fetching the remote source (you will need to pass the content helpers for analysis)
         contentSelector: 'body', // (OPTIONAL) option to finetune where Yoast will look for the content. (only applicable for scraping without content function)
       },
     },

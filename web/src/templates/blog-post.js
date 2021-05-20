@@ -16,6 +16,13 @@ export const query = graphql`
         ...SanityImage
         alt
       }
+      title
+      seo {
+        seo_title
+        meta_description
+        focus_keyword
+        focus_synonyms
+      }
       slug {
         current
       }
@@ -29,15 +36,16 @@ export const query = graphql`
 const BlogPostTemplate = props => {
   const { data, errors } = props;
   const post = data && data.post;
+  console.log(post.seo);
   return (
     <Layout textWhite={true}>
       {errors && <SEO title="GraphQL Error" />}
       {post && (
         <SEO
           title={post.title || "Untitled"}
-          description={toPlainText(post._rawExcerpt)}
+          description={post.seo.meta_description}
           image={post.mainImage}
-          keywords={post.keywords}
+          keywords={post.seo.focus_synonyms}
         />
       )}
 
