@@ -98,12 +98,6 @@ const Page = ({ data, errors }) => {
       }
       return el;
     });
-
-  const pageTitle = data.route && !data.route.useSiteTitle && page.title;
-  console.log(page.description);
-  console.log(page);
-  console.log(page.title);
-  console.log(site);
   return (
     <Layout>
       <SEO
