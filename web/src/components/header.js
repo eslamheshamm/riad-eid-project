@@ -52,14 +52,14 @@ const Header = () => {
             </li>
             <li className="my-1">
               <Link
-                to="/contact-us"
+                to="/ask-riad-eid"
                 className="mx-2 lg:mx-6 opacity-50"
                 activeClassName="opacity-100"
               >
-                تواصل معنا
+                اسأل رياض عيد
               </Link>
             </li>
-            {/* <li className="my-1 hidden md:block">
+            <li className="my-1 hidden md:block">
               <a
                 href="http://bit.ly/3aH6YWw"
                 rel="noreferrer"
@@ -71,7 +71,7 @@ const Header = () => {
 
                 <span className="mr-3"> تواصل معنا</span>
               </a>
-            </li> */}
+            </li>
           </ul>
         </div>
       </div>
