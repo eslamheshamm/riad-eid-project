@@ -2,9 +2,6 @@ import { Link } from "gatsby";
 import React from "react";
 import Logo from "./images/logo-line.png";
 const Header = () => {
-  const buttonColor = {
-    backgroundColor: "#25D366"
-  };
   return (
     <nav className=" w-full text-black font-yasser text-base">
       <div className="w-full  mx-auto flex flex-wrap items-center   justify-center lg:justify-between my-16 ">
@@ -60,6 +57,15 @@ const Header = () => {
                 activeClassName="opacity-100"
               >
                 اسأل رياض عيد
+              </Link>
+            </li>
+            <li className="my-1">
+              <Link
+                to="/contact-us"
+                className="mx-2 lg:mx-6 opacity-50"
+                activeClassName="opacity-100"
+              >
+                تواصل معنا
               </Link>
             </li>
           </ul>
