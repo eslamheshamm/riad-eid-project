@@ -10,7 +10,7 @@ import { responsiveTitle3 } from "../typography.module.css";
 
 function BlogPostPreview(props) {
   return (
-    <div className={props.isInList ? styles.inList : styles.inGrid}>
+    <div className={styles.inGrid}>
       <div className={styles.leadMediaThumb}>
         {props.mainImage && props.mainImage.asset && (
           <img
@@ -18,6 +18,7 @@ function BlogPostPreview(props) {
               .width(600)
               .height(Math.floor((9 / 16) * 600))
               .auto("format")
+              .fit("fill")
               .url()}
             alt={props.mainImage.alt}
           />
