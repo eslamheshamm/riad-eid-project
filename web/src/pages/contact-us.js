@@ -16,9 +16,9 @@ const ContactUs = props => {
           placeHolder1={"عنوان البريد الالكتروني"}
           placeHolder2={`رقم الهاتف`}
           placeHolder3={"الرسالة"}
-        />{" "}
+        />
         <img src={Child} alt="Child" className="row-start-1 lg:row-auto" />
-      </section>{" "}
+      </section>
     </Layout>
   );
 };
