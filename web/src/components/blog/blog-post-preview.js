@@ -9,6 +9,7 @@ import styles from "./blog-post-preview.module.css";
 import { responsiveTitle3 } from "../typography.module.css";
 
 function BlogPostPreview(props) {
+  console.log(props._rawExcerpt);
   return (
     <div className={props.isInList ? styles.inList : styles.inGrid}>
       <div className={styles.leadMediaThumb}>
