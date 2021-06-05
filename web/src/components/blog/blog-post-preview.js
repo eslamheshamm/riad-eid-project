@@ -11,7 +11,7 @@ import { responsiveTitle3 } from "../typography.module.css";
 function BlogPostPreview(props) {
   console.log(props._rawExcerpt);
   return (
-    <div className={props.isInList ? styles.inList : styles.inGrid}>
+    <div className={styles.inGrid}>
       <div className={styles.leadMediaThumb}>
         {props.mainImage && props.mainImage.asset && (
           <img
@@ -19,13 +19,15 @@ function BlogPostPreview(props) {
               .width(600)
               .height(Math.floor((9 / 16) * 600))
               .auto("format")
+              .fit("fill")
               .url()}
             alt={props.mainImage.alt}
+            className="rounded-sm"
           />
         )}
       </div>
       <div className={styles.text}>
-        <h3 className={cn(responsiveTitle3, styles.title)}>{props.title}</h3>
+        <h3 className={cn(responsiveTitle3, "font-yasser text-2xl md:text-4xl")}>{props.title}</h3>
         {props._rawExcerpt && (
           <div className={styles.excerpt}>
             <PortableText blocks={props._rawExcerpt} />

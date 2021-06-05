@@ -10,7 +10,7 @@ import styles from "./blog-post.module.css";
 function BlogPost(props) {
   const { _rawBody, title, mainImage } = props;
   return (
-    <article className="w-7/12 mx-auto">
+    <article className=" md:w-10/12 lg:w-7/12 mx-auto">
       {mainImage && mainImage.asset && (
         <div className={styles.mainImage}>
           <img
@@ -27,7 +27,7 @@ function BlogPost(props) {
       <Container>
         <div>
           <div className={styles.mainContent}>
-            <h1 className={`font-yasser text-4xl my-6`}>{title}</h1>
+            <h1 className={`font-yasser text-xl md:text-4xl my-6`}>{title}</h1>
             <div className="mb-32"> {_rawBody && <PortableText blocks={_rawBody} />}</div>
           </div>
         </div>

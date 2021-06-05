@@ -52,6 +52,15 @@ const Header = () => {
             </li>
             <li className="my-1">
               <Link
+                to="/ask-riad-eid"
+                className="mx-2 lg:mx-6 opacity-50"
+                activeClassName="opacity-100"
+              >
+                اسأل رياض عيد
+              </Link>
+            </li>
+            <li className="my-1">
+              <Link
                 to="/contact-us"
                 className="mx-2 lg:mx-6 opacity-50"
                 activeClassName="opacity-100"
@@ -59,19 +68,6 @@ const Header = () => {
                 تواصل معنا
               </Link>
             </li>
-            {/* <li className="my-1 hidden md:block">
-              <a
-                href="http://bit.ly/3aH6YWw"
-                rel="noreferrer"
-                target="_blank"
-                className=" text py-4 px-6 text-xl rounded-3xl flex "
-                style={buttonColor}
-              >
-                <Whatsapp className="flex-grow-0" />
-
-                <span className="mr-3"> تواصل معنا</span>
-              </a>
-            </li> */}
           </ul>
         </div>
       </div>

@@ -87,7 +87,17 @@ const Page = ({ data, errors }) => {
               el = <AboutProgramSteps />;
               break;
             case "form":
-              el = <Form />;
+              el = (
+                <Form
+                  title={"اسأل رياض عيد"}
+                  description={
+                    "نسبة النجاح في هذا الامر تصل إلي 95% في حال التزام الزوجين بجميع التوصيات المذكورة في التوصيات"
+                  }
+                  placeHolder1={"السؤال"}
+                  placeHolder2={`رقم الهاتف`}
+                  placeHolder3={"توضيح للسؤال (اختياري)"}
+                />
+              );
               break;
             default:
               break;
