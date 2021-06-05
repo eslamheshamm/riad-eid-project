@@ -5,16 +5,9 @@ import ReactPlayer from "react-player";
 import InstagramEmbed from "react-instagram-embed";
 import LatexRenderer from "./Latex";
 import styles from "./serializers.module.css";
-const AuthorReference = ({ node }) => {
-  if (node && node.author && node.author.name) {
-    return <span>{node.author.name}</span>;
-  }
-  return <></>;
-};
 
 const serializers = {
   types: {
-    authorReference: AuthorReference,
     mainImage: ({ node }) => <MainImage mainImage={node} />,
     videoEmbed: ({ node }) => (
       <div className={styles.playerWrapper}>
