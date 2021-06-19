@@ -5,7 +5,7 @@ import ReactPlayer from "react-player";
 import InstagramEmbed from "react-instagram-embed";
 import LatexRenderer from "./Latex";
 import styles from "./serializers.module.css";
-
+import CTALink from "./CTALink";
 const serializers = {
   types: {
     mainImage: ({ node }) => <MainImage mainImage={node} />,
@@ -24,7 +24,10 @@ const serializers = {
       if (!node.url) return null;
       return <InstagramEmbed url={node.url} className="container mx-auto mt-6 mb-6" />;
     },
-    math: ({ node, isInline = false }) => <LatexRenderer isInline={isInline} latex={node.latex} />
+    math: ({ node, isInline = false }) => {
+      return <LatexRenderer isInline={isInline} latex={node.latex} />;
+    },
+    cta: ({ node }) => <CTALink {...node} />
   }
 };
 

@@ -1,6 +1,5 @@
 import React from "react";
 
-import Container from "../components/container";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
 import Child from "../components/images/child.png";
