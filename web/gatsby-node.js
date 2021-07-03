@@ -156,6 +156,7 @@ async function createInterviewsPostPages(pathPrefix = "/interviews", graphql, ac
       });
     });
 }
+
 async function createQuestionsPostPages(pathPrefix = "/questions", graphql, actions, reporter) {
   const { createPage } = actions;
   const result = await graphql(`
@@ -190,6 +191,40 @@ async function createQuestionsPostPages(pathPrefix = "/questions", graphql, acti
       });
     });
 }
+async function createAskPostPages(pathPrefix = "/ask-riad-eid", graphql, actions, reporter) {
+  const { createPage } = actions;
+  const result = await graphql(`
+    {
+      allSanityAsk(filter: { slug: { current: { ne: null } } }) {
+        edges {
+          node {
+            id
+            publishedAt
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  if (result.errors) throw result.errors;
+
+  const postEdges = (result.data.allSanityAsk || {}).edges || [];
+  postEdges
+    .filter(edge => !isFuture(edge.node.publishedAt))
+    .forEach(edge => {
+      const { id, slug = {} } = edge.node;
+      const path = `${pathPrefix}/${slug.current}/`;
+      reporter.info(`Creating Ask post page: ${path}`);
+      createPage({
+        path,
+        component: require.resolve("./src/templates/ask-post.js"),
+        context: { id }
+      });
+    });
+}
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   await createLandingPages("/", graphql, actions, reporter);
@@ -197,4 +232,5 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   await createPressPostPages("/press", graphql, actions, reporter);
   await createInterviewsPostPages("/interviews", graphql, actions, reporter);
   await createQuestionsPostPages("/questions", graphql, actions, reporter);
+  await createAskPostPages("/ask-riad-eid", graphql, actions, reporter);
 };
