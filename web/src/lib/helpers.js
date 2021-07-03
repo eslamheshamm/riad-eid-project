@@ -29,6 +29,10 @@ export function getInterviewsUrl(slug) {
 export function getQuestionsUrl(slug) {
   return `/questions/${slug.current || slug}/`;
 }
+
+export function getAskUrl(slug) {
+  return `/ask-riad-eid/${slug.current || slug}/`;
+}
 export function buildImageObj(source = { asset: {} }) {
   const imageObj = {
     asset: { _ref: source.asset._ref || source.asset._id }
