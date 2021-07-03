@@ -10,7 +10,7 @@ import pressPost from './documents/pressPost'
 import interviews from './documents/interviews'
 import questions from './documents/questions'
 import reviews from './documents/reviews'
-
+import ask from './documents/ask-riad-eid'
 import page from './documents/page'
 import siteSettings from './documents/siteSettings'
 import route from './documents/route'
@@ -39,6 +39,7 @@ export default createSchema({
   types: schemaTypes // Built-in types
     // Our custom types
     .concat([
+      ask,
       reviews,
       questions,
       interviews,
