@@ -1,87 +1,60 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-function encode(data) {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
-}
+import { useFormspark } from "@formspark/use-formspark";
 
 const FormInputs = props => {
-  const { title, description, placeHolder1, placeHolder2, placeHolder3 } = props;
+  const { title, description, placeHolder1, placeHolder2, placeHolder3, formId } = props;
+  const FORMSPARK_FORM_ID = formId;
   const {
     register,
     handleSubmit,
     formState: { errors }
   } = useForm();
   const [succes, setSucces] = React.useState(false);
-  const [disable, setDisable] = React.useState(false);
-
-  const onSubmit = (data, e) => {
+  const [error, setError] = React.useState(null);
+  const [submit] = useFormspark({
+    formId: FORMSPARK_FORM_ID
+  });
+  const onSubmit = async (data, e) => {
     e.preventDefault();
-    const form = e.target;
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "form-name": form.getAttribute("name"),
-        ...data
-      })
-    })
-      .then(res => {
-        console.log(res);
+    await submit({ ...data })
+      .then(() => {
         setSucces(true);
-        setDisable(true);
       })
-      .catch(error => alert(error));
+      .catch(error => setError(error));
   };
 
   return (
     <div>
       <h1 className="text-3xl font-yasser text-black mb-0">{title}</h1>
       <p className="font-cairo my-4 text-black opacity-75">{description}</p>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="text-black flex flex-col font-yasser"
-        autoComplete="off"
-        name="contact"
-        method="post"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-        netlify
-      >
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col" autoComplete="off">
         <input type="hidden" name="form-name" value="contact" />
-        <p class="hidden">
-          <label>
-            Don’t fill this out if you’re human: <input name="bot-field" />
-          </label>
-        </p>
-        <label className="mb-5 w-full">
+        <label className="mb-5 w-full text-black">
           <input
-            name="question"
             type="text"
             placeholder={placeHolder1}
-            {...register("question", { required: true })}
+            {...register("fieldOne", { required: true })}
             className="py-8 px-6 border rounded-2xl focus:ring-1 focus:ring-primary focus:outline-none block w-full"
           />
-          {errors.question && <span>This field is required</span>}
+          {errors.fieldOne && <span>This field is required</span>}
         </label>
-        <label className="mb-5 w-full">
+        <label className="mb-5 w-full text-black">
           <input
-            name="phone number"
             type="text"
             placeholder={placeHolder2}
-            {...register("phoneNumber", {
+            {...register("fieldTwo", {
               required: "This field is required",
               pattern: {
                 value: /[0-9]{9}/,
                 message: "Only numbers"
               }
             })}
-            className="py-8 px-6 border rounded-2xl focus:ring-1 focus:ring-primary-DEFAULT focus:outline-none block w-full"
+            className="py-8 px-6 border focus:text-black rounded-2xl focus:ring-1 focus:ring-primary-DEFAULT focus:outline-none block w-full"
           />
-          {errors.phoneNumber && <span>{errors.phoneNumber.message}</span>}
+          {errors.fieldTwo && <span>{errors.fieldTwo.message}</span>}
         </label>
-        <label className="w-full mb-8">
+        <label className="w-full mb-8 text-black">
           <textarea
             placeholder={placeHolder3}
             name="declaration"
@@ -89,16 +62,16 @@ const FormInputs = props => {
             className="resize-none border rounded-2xl h-48 py-8 px-6  focus:ring-1 focus:ring-primary-DEFAULT focus:outline-none w-full block"
           />
         </label>
-        {succes && <span>شكراً.</span>}
-
+        {succes && <span className="text-black my-2 text-xl font-bold ">شكراً.</span>}
+        {succes ? null : error && <p className="font-bold my-2">Sorry something wrong happened.</p>}
         <button
           type="submit"
           className={
-            disable
+            succes
               ? "self-start p-6   rounded-2xl  bg-primary-DEFAULT font-semibold text-black text-lg opacity-50 cursor-auto"
               : "self-start p-6   rounded-2xl  bg-primary-DEFAULT font-semibold text-black text-lg"
           }
-          disabled={disable}
+          disabled={succes}
         >
           الإرسال الأن
         </button>

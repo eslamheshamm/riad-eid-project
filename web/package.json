@@ -38,6 +38,7 @@
     "tailwindcss": "^1.9.6"
   },
   "dependencies": {
+    "@formspark/use-formspark": "^0.1.32",
     "@sanity/client": "^2.1.0",
     "gatsby-image": "^2.0.41",
     "gatsby-plugin-google-analytics": "^3.3.0",
