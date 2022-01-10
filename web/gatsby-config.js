@@ -1,6 +1,6 @@
 // Load variables from `.env` as soon as possible
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV || "development"}`
+  path: `.env.${process.env.NODE_ENV || "development"}`,
 });
 
 const path = require("path");
@@ -10,7 +10,7 @@ const isProd = process.env.NODE_ENV === "production";
 
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://riadeid.net/`
+    siteUrl: `https://riadeid.net/`,
   },
   plugins: [
     "gatsby-plugin-postcss",
@@ -31,22 +31,22 @@ module.exports = {
         // Delays sending pageview hits on route update (in milliseconds)
         pageTransitionDelay: 0,
         // Defers execution of google analytics script after page load
-        defer: false
-      }
+        defer: false,
+      },
     },
     {
       resolve: `gatsby-plugin-advanced-sitemap`,
       options: {
         createLinkInHead: true, // optional: create a link in the `<head>` of your site
-        addUncaughtPages: true // optional: will fill up pages that are not caught by queries and mapping and list them under `sitemap-pages.xml`
-      }
+        addUncaughtPages: true, // optional: will fill up pages that are not caught by queries and mapping and list them under `sitemap-pages.xml`
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: path.join(__dirname, `src`, `images`)
-      }
+        path: path.join(__dirname, `src`, `images`),
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -56,8 +56,14 @@ module.exports = {
         ...clientConfig.sanity,
         token: process.env.SANITY_READ_TOKEN,
         watchMode: !isProd,
-        overlayDrafts: !isProd
-      }
-    }
-  ]
+        overlayDrafts: !isProd,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-facebook-pixel`,
+      options: {
+        pixelId: "1027061744511696",
+      },
+    },
+  ],
 };

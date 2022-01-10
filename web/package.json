@@ -42,6 +42,7 @@
     "@formspark/use-formspark": "^0.1.32",
     "@sanity/client": "^2.1.0",
     "gatsby-image": "^2.0.41",
+    "gatsby-plugin-facebook-pixel": "^1.0.8",
     "gatsby-plugin-google-analytics": "^3.3.0",
     "gatsby-plugin-sharp": "^2.4.4",
     "gatsby-plugin-sitemap": "^3.3.0",
