@@ -64,6 +64,10 @@ function SEO({ description, lang, meta, keywords, title, image, bodyAttr, gradie
                 content: siteAuthor
               },
               {
+                name: "facebook-domain-verification",
+                content: "r63lmazno3u3u1rx3peymbfhy7748c"
+              },
+              {
                 name: "twitter:title",
                 content: title
               },
