@@ -41,7 +41,7 @@ const BlogPostTemplate = props => {
       {post && (
         <SEO
           title={post.title || "Untitled"}
-          description={post.seo.meta_description || ""}
+          description={post.seo.meta_description && post.seo.meta_description || ""}
           image={post.mainImage || ""}
           keywords={post.seo.focus_synonyms || []}
         />
