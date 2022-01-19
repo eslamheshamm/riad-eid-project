@@ -103,7 +103,8 @@ function SEO({ description, lang, meta, keywords, title, image, bodyAttr, gradie
 SEO.defaultProps = {
   lang: "ar",
   meta: [],
-  keywords: []
+  keywords: [],
+  description: ""
 };
 
 SEO.propTypes = {
