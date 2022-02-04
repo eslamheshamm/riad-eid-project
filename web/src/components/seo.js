@@ -36,6 +36,10 @@ function SEO({ description, lang, meta, keywords, title, image, bodyAttr, gradie
                 content: "7MfJFsxBVui5UlEBExUFeMW9-Q6g9fPgoaxwzvbqaV0"
               },
               {
+                name: "google-site-verification",
+                content: "LzFxBYqpm4ZTv1T2LKpPHUXgL7HxrmA9gIXPhs9MzyI"
+              },
+              {
                 name: "description",
                 content: metaDescription
               },

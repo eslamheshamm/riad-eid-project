@@ -1,6 +1,6 @@
 // import { format } from "date-fns";
-import { Link } from "gatsby";
 import React from "react";
+import { Link } from "gatsby";
 import { buildImageObj, cn, getPressUrl } from "../../lib/helpers";
 import { imageUrlFor } from "../../lib/image-url";
 import PortableText from "../portableText";
